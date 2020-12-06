@@ -1,6 +1,6 @@
 *.DS_Store
 *.env
-*package-lock.json.json
+*package-lock.json
 *node_modules
 *.psd
 *.vscode/settings.json
