@@ -76,7 +76,7 @@ let svg = d3.select("#chart")
         "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
-d3.json("/data/data.json", (data) => {
+d3.json("/data/blog-data.json", (data) => {
     console.log(data)
 
     let dateCheck = d3.range(data.length).map((d, i) => {

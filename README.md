@@ -30,7 +30,14 @@
 
 #### Next
 - Blog
-    - get date working on x axis
-    - add legend
-- Map
+    - get date working on x axis (x)
+    - add legend (x)
+    - serve db data instead of json
 - Sensor
+    - viz w/ json data first (x)
+    - get user inputs + sensor api res
+        - send to DB
+    - serve db data instead of json
+- Map
+    - viz w/ json data first
+    - serve db data instead of json
