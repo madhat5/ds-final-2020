@@ -1,7 +1,7 @@
 // console.log('sim sim salabim');
 
 const dotenv = require('dotenv');
-// mb = require('mapbox.js');
+let fs = require('fs');
 // const moment = require('moment-timezone'); 
 
 let geoData = require('./data/geoData.json');
@@ -20,6 +20,15 @@ let combinedData = geoData.map((d, i) => {
     }
 })
 // console.log(combinedData)
+function writeFile(fsName, fsData) {
+    fs.writeFileSync('data/' + fsName + '.json', JSON.stringify(fsData));
+    console.log('*** *** *** *** ***');
+    console.log('writeFile complete for', fsName);
+};
+// writeFile('newGeoData', combinedData);
+
+// ==================================================
+
 
 dotenv.config();
 const API_KEY = process.env.MAPBOX_KEY;
@@ -37,5 +46,5 @@ L.tileLayer(API_URL, {
     //'pk.eyJ1Ijoidm9ucmFtc3kiLCJhIjoiY2pveGF1MmxoMjZnazNwbW8ya2dsZTRtNyJ9.mJ1kRVrVnwTFNdoKlQu_Cw'
 }).addTo(mymap);
 for (var i = 0; i < combinedData.length; i++) {
-    L.marker([combinedData[i].lat, data[i].lon]).bindPopup(JSON.stringify(data[i].address)).addTo(mymap);
+    L.marker([combinedData[i].lat, combinedData[i].lon]).bindPopup(JSON.stringify(combinedData[i].address)).addTo(mymap);
 }

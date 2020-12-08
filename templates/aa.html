@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="en">
 
 <head>
@@ -10,18 +9,2273 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
         crossorigin="" />
-    <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
 </head>
-
 
 <body>
     <div id="mapid"></div>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+    <script>
+        let data = [{
+            "lat": "40.7132597018695",
+            "lon": "-74.0023994478748",
+            "name": "St Andrews Church",
+            "address": "20 CARDINAL HAYES PL New York NY ",
+            "origAddress": "20 Cardinal Hayes Place"
+        }, {
+            "lat": "40.7133",
+            "lon": "-74.0024",
+            "name": "St. Andrew's Church",
+            "address": "20 CARDINAL HAYES PL New York NY ",
+            "origAddress": "20 Cardinal Hayes Place"
+        }, {
+            "lat": "40.7148047974301",
+            "lon": "-73.9990377012436",
+            "name": "Church of the Transfiguration",
+            "address": "29 MOTT ST New York NY ",
+            "origAddress": "29 Mott Street"
+        }, {
+            "lat": "40.7080475730195",
+            "lon": "-74.0042375398091",
+            "name": "St. Margaret's Residence",
+            "address": "49 FULTON ST New York NY ",
+            "origAddress": "49 Fulton Street"
+        }, {
+            "lat": "40.6379",
+            "lon": "-74.1428",
+            "name": "",
+            "address": "44 JOHN ST New York NY ",
+            "origAddress": "44 John Street"
+        }, {
+            "lat": "40.708",
+            "lon": "-74.0042",
+            "name": "",
+            "address": "49 FULTON ST New York NY ",
+            "origAddress": "49 Fulton Street"
+        }, {
+            "lat": "40.7132597018695",
+            "lon": "-74.0023994478748",
+            "name": "St. Andrew's Church",
+            "address": "20 CARDINAL HAYES PL New York NY ",
+            "origAddress": "20 Cardinal Hayes Place"
+        }, {
+            "lat": "40.7125098758043",
+            "lon": "-74.0094653605709",
+            "name": "St. Peter's Church",
+            "address": "22 BARCLAY ST New York NY ",
+            "origAddress": "22 Barclay Street"
+        }, {
+            "lat": "40.7133",
+            "lon": "-74.0024",
+            "name": "St. Andrew's Church",
+            "address": "20 CARDINAL HAYES PL New York NY ",
+            "origAddress": "20 Cardinal Hayes Place"
+        }, {
+            "lat": "40.7125098758043",
+            "lon": "-74.0094653605709",
+            "name": "Saint Peter's Church",
+            "address": "22 BARCLAY ST New York NY ",
+            "origAddress": "22 Barclay Street (Basement)"
+        }, {
+            "lat": "40.7208247814361",
+            "lon": "-74.0048537254953",
+            "name": "Hazelden Tribeca",
+            "address": "283 W BROADWAY New York NY ",
+            "origAddress": "283 West Broadway"
+        }, {
+            "lat": "40.7143559829254",
+            "lon": "-74.0130165248683",
+            "name": "Municipal Union Bldg DC 37",
+            "address": "125 BARCLAY ST New York NY ",
+            "origAddress": "125 Barclay Street"
+        }, {
+            "lat": "40.708",
+            "lon": "-74.0042",
+            "name": "St. Margaret's House",
+            "address": "49 FULTON ST New York NY ",
+            "origAddress": "49 Fulton Street"
+        }, {
+            "lat": "40.708",
+            "lon": "-74.0042",
+            "name": "St. Margaret's House",
+            "address": "49 FULTON ST New York NY ",
+            "origAddress": "49 Fulton Street"
+        }, {
+            "lat": "40.7133",
+            "lon": "-74.0024",
+            "name": "Church of Saint Andrew",
+            "address": "20 CARDINAL HAYES PL New York NY ",
+            "origAddress": "20 Cardinal Hayes Place"
+        }, {
+            "lat": "40.7208",
+            "lon": "-74.0049",
+            "name": "Tribeca 12 Building",
+            "address": "283 W BROADWAY New York NY ",
+            "origAddress": "283 West Broadway"
+        }, {
+            "lat": "40.708",
+            "lon": "-74.0042",
+            "name": "",
+            "address": "49 FULTON ST New York NY ",
+            "origAddress": "49 Fulton Street"
+        }, {
+            "lat": "40.7125098758043",
+            "lon": "-74.0094653605709",
+            "name": "St. Peter's Church",
+            "address": "22 BARCLAY ST New York NY ",
+            "origAddress": "22 Barclay Street"
+        }, {
+            "lat": "40.7133",
+            "lon": "-74.0024",
+            "name": "St. Andrew's Church",
+            "address": "20 CARDINAL HAYES PL New York NY ",
+            "origAddress": "20 Cardinal Hayes Place"
+        }, {
+            "lat": "40.7208247814361",
+            "lon": "-74.0048537254953",
+            "name": "Hazelden Center",
+            "address": "283 W BROADWAY New York NY ",
+            "origAddress": "283 West Broadway"
+        }, {
+            "lat": "40.7208",
+            "lon": "-74.0049",
+            "name": "Hazelden Center",
+            "address": "283 W BROADWAY New York NY ",
+            "origAddress": "283 West Broadway"
+        }, {
+            "lat": "40.7208",
+            "lon": "-74.0049",
+            "name": "Hazelden Center",
+            "address": "283 W BROADWAY New York NY ",
+            "origAddress": "283 W. Broadway"
+        }, {
+            "lat": "40.7235",
+            "lon": "-73.9922",
+            "name": "University Settlement",
+            "address": "273 BOWERY New York NY ",
+            "origAddress": "273 Bowery"
+        }, {
+            "lat": "40.7362371953365",
+            "lon": "-74.0025217528845",
+            "name": "Manhattan Seventh-Day Adventist Church",
+            "address": "232 W 11TH ST New York NY ",
+            "origAddress": "232 West 11th Street"
+        }, {
+            "lat": "40.7208247814361",
+            "lon": "-74.0048537254953",
+            "name": "Hazelden Center",
+            "address": "283 W BROADWAY New York NY ",
+            "origAddress": "283 West Broadway"
+        }, {
+            "lat": "40.7362371953365",
+            "lon": "-74.0025217528845",
+            "name": "Seventh Day Adventist Church",
+            "address": "232 W 11TH ST New York NY ",
+            "origAddress": "232 W. 11th Street"
+        }, {
+            "lat": "40.7286467882859",
+            "lon": "-74.0045885668674",
+            "name": "",
+            "address": "220 W HOUSTON ST New York NY ",
+            "origAddress": "220 West Houston Street"
+        }, {
+            "lat": "40.7206405452782",
+            "lon": "-73.997977030548",
+            "name": "Golden Bridge Yoga Center",
+            "address": "253 CENTER ST New York NY ",
+            "origAddress": "253 Center Street"
+        }, {
+            "lat": "40.7236818990557",
+            "lon": "-73.9924846000013",
+            "name": "University Settlement (The Chinatown YMCA)",
+            "address": "273 BOWERY New York NY ",
+            "origAddress": "273 Bowery"
+        }, {
+            "lat": "40.7326",
+            "lon": "-74.0067",
+            "name": "St. Luke's Episcopal School",
+            "address": "487 HUDSON ST New York NY ",
+            "origAddress": "487 Hudson Street"
+        }, {
+            "lat": "40.7137225661799",
+            "lon": "-73.9830344520293",
+            "name": "St. Augustine's Church",
+            "address": "292 HENRY ST New York NY ",
+            "origAddress": "292 Henry Street"
+        }, {
+            "lat": "40.6964",
+            "lon": "-73.9934",
+            "name": "Manhattan Church of The Seventh-day Adventist",
+            "address": "141 HENRY ST New York NY ",
+            "origAddress": "232 West 11th Street"
+        }, {
+            "lat": "40.7286",
+            "lon": "-74.0046",
+            "name": "Church of Saint Theresa Rectory",
+            "address": "220 W HOUSTON ST New York NY ",
+            "origAddress": "141 Henry Street"
+        }, {
+            "lat": "40.7336",
+            "lon": "-74.0037",
+            "name": "",
+            "address": "83 CHRISTOPHER ST New York NY ",
+            "origAddress": "220 West Houston Street"
+        }, {
+            "lat": "40.7355",
+            "lon": "-74.0032",
+            "name": "St. John's Lutheran Church",
+            "address": "50 PERRY ST New York NY ",
+            "origAddress": "83 Christopher Street"
+        }, {
+            "lat": "40.7362371953365",
+            "lon": "-74.0025217528845",
+            "name": "",
+            "address": "232 W 11TH ST New York NY ",
+            "origAddress": "50 Perry Street"
+        }, {
+            "lat": "40.7360739124495",
+            "lon": "-74.0019465995063",
+            "name": "Seventh Day Adventist Church",
+            "address": "224 WAVERLY PL New York NY ",
+            "origAddress": "232 West 11th Street"
+        }, {
+            "lat": "40.6793",
+            "lon": "-74.0143",
+            "name": "St. John's Episcopal Church",
+            "address": "154 SULLIVAN ST New York NY ",
+            "origAddress": "224 Waverly Place"
+        }, {
+            "lat": "40.7236818990557",
+            "lon": "-73.9924846000013",
+            "name": "St. Anthony's of Padua",
+            "address": "273 BOWERY ST New York NY ",
+            "origAddress": "154 Sullivan Street"
+        }, {
+            "lat": "40.6702479972343",
+            "lon": "-73.9819764881203",
+            "name": "Chinatown YMCA",
+            "address": "371 6TH AVE New York NY ",
+            "origAddress": "273 Bowery Street"
+        }, {
+            "lat": "40.6793",
+            "lon": "-74.0145",
+            "name": "St. Joseph's Church",
+            "address": "155 SULLIVAN ST New York NY ",
+            "origAddress": "371 6th Avenue"
+        }, {
+            "lat": "40.7333014567065",
+            "lon": "-73.9949355719509",
+            "name": "St. Anthony of Padua Church",
+            "address": "7 E 10TH STRERT New York NY ",
+            "origAddress": "155 Sullivan Street"
+        }, {
+            "lat": "40.7362371953365",
+            "lon": "-74.0025217528845",
+            "name": "The Bronfman Cernter @ NYU",
+            "address": "232 W 11TH ST New York NY ",
+            "origAddress": "7 East 10th Strert"
+        }, {
+            "lat": "40.7336",
+            "lon": "-74.0036",
+            "name": "Seventh Adventist Church",
+            "address": "81 CHRISTOPHER ST New York NY ",
+            "origAddress": "232 West 11th Street"
+        }, {
+            "lat": "40.7236818990557",
+            "lon": "-73.9924846000013",
+            "name": "St. John's Lutheran Church",
+            "address": "273 BOWERY New York NY ",
+            "origAddress": "81 Christopher Street"
+        }, {
+            "lat": "40.7362371953365",
+            "lon": "-74.0025217528845",
+            "name": "University Settlement (The Chinatown YMCA)",
+            "address": "232 W 11TH ST New York NY ",
+            "origAddress": "273 Bowery"
+        }, {
+            "lat": "40.7362371953365",
+            "lon": "-74.0025217528845",
+            "name": "Manhattan Seventh-Day Adventist Church",
+            "address": "232 W 11TH ST New York NY ",
+            "origAddress": "232 West 11th Street"
+        }, {
+            "lat": "40.7362371953365",
+            "lon": "-74.0025217528845",
+            "name": "Manhattan Church of The Seventh-day Adventist",
+            "address": "232 W 11TH ST New York NY ",
+            "origAddress": "232 West 11th Street"
+        }, {
+            "lat": "40.7335784357573",
+            "lon": "-74.0037470106206",
+            "name": "St. John's Lutheran Church",
+            "address": "83 CHRISTOPHER ST New York NY ",
+            "origAddress": "83 Christopher Street"
+        }, {
+            "lat": "40.7286467882859",
+            "lon": "-74.0045885668674",
+            "name": "",
+            "address": "220 W HOUSTON ST New York NY ",
+            "origAddress": "220 West Houston Street"
+        }, {
+            "lat": "40.7235",
+            "lon": "-73.9922",
+            "name": "University Settlement @ Houston Street Center",
+            "address": "273 BOWERY New York NY ",
+            "origAddress": "273 Bowery"
+        }, {
+            "lat": "40.7332540959031",
+            "lon": "-73.9948230189705",
+            "name": "N.Y.U Bronfman Center",
+            "address": "7 E 10TH ST New York NY ",
+            "origAddress": "7 East 10th Street"
+        }, {
+            "lat": "40.7385487033475",
+            "lon": "-73.9843107652274",
+            "name": "Gustavus Adolphus Church",
+            "address": "155 E 22ND ST New York NY ",
+            "origAddress": "155 East 22nd Street"
+        }, {
+            "lat": "40.7309933179645",
+            "lon": "-73.9903457868189",
+            "name": "Three Jewels Community Center",
+            "address": "61 FOURTH AVE New York NY ",
+            "origAddress": "61 Fourth Avenue"
+        }, {
+            "lat": "40.7381015874774",
+            "lon": "-74.0009719369804",
+            "name": "Lesbian, Gay, Bi-Sexual & Transgender Community Center",
+            "address": "208 W 13TH ST New York NY ",
+            "origAddress": "208 West 13th Street"
+        }, {
+            "lat": "40.7347374906693",
+            "lon": "-73.9882404289172",
+            "name": "Seafarers & Intl House",
+            "address": "123 E 15TH ST New York NY ",
+            "origAddress": "123 East 15th Street"
+        }, {
+            "lat": "40.7387",
+            "lon": "-73.9866",
+            "name": "Calvary Church Parish House",
+            "address": "61 GRAMERCY PARK N New York NY ",
+            "origAddress": "61 Gramercy Park North"
+        }, {
+            "lat": "40.7385487033475",
+            "lon": "-73.9843107652274",
+            "name": "Gustavus Adolphus Lutheran Church",
+            "address": "155 E 22ND ST New York NY ",
+            "origAddress": "155 East 22nd Street"
+        }, {
+            "lat": "40.6457700799023",
+            "lon": "-73.9566582324694",
+            "name": "Mabel Bacon High School of the Future",
+            "address": "127 E 22ND ST New York NY ",
+            "origAddress": "127 East 22nd Street"
+        }, {
+            "lat": "40.7256865491758",
+            "lon": "-73.9791544569912",
+            "name": "Trinity Lower East Side Lutheran Parish",
+            "address": "602 E 9TH ST New York NY ",
+            "origAddress": "602 East 9th Street"
+        }, {
+            "lat": "40.737690789482",
+            "lon": "-73.997394196627",
+            "name": "McBurney YMCA",
+            "address": "125 W 14TH ST New York NY ",
+            "origAddress": "125 West 14th Street"
+        }, {
+            "lat": "40.7440018974012",
+            "lon": "-74.0014509597722",
+            "name": "St. Peters Episcopal Church- Rectory",
+            "address": "346 W 20TH ST New York NY ",
+            "origAddress": "346 W. 20th Street"
+        }, {
+            "lat": "40.737690789482",
+            "lon": "-73.997394196627",
+            "name": "McBurney YMCA",
+            "address": "125 W 14TH ST New York NY ",
+            "origAddress": "125 West 14th Street"
+        }, {
+            "lat": "40.7311439629982",
+            "lon": "-73.9822721414822",
+            "name": "Our Lady of Immaculate Conception",
+            "address": "414 E 14TH ST New York NY ",
+            "origAddress": "414 East 14th Street"
+        }, {
+            "lat": "40.8236360777407",
+            "lon": "-73.809197225071",
+            "name": "Fulton Senior Center",
+            "address": "119 NINTH AVE New York NY ",
+            "origAddress": "119 Ninth Avenue"
+        }, {
+            "lat": "40.7447064928879",
+            "lon": "-73.9952593824343",
+            "name": "Christopher House",
+            "address": "202 W 24 ST New York NY ",
+            "origAddress": "202 West 24 Street"
+        }, {
+            "lat": "40.7371581633267",
+            "lon": "-73.9853137813165",
+            "name": "Brotherhood Synagogue",
+            "address": "28 GRAMERCY PARK S New York NY ",
+            "origAddress": "28 Gramercy Park South"
+        }, {
+            "lat": "40.727842175225",
+            "lon": "-73.9880097296677",
+            "name": "Middle Collegiate Church",
+            "address": "50 E 7TH ST New York NY ",
+            "origAddress": "50 East 7th Street"
+        }, {
+            "lat": "40.7236818990557",
+            "lon": "-73.9924846000013",
+            "name": "University Settlement House",
+            "address": "273 BOWERY New York NY ",
+            "origAddress": "273 Bowery"
+        }, {
+            "lat": "40.7320478046546",
+            "lon": "-73.9911904036263",
+            "name": "Grace Church Office Building",
+            "address": "802 BROADWAY New York NY ",
+            "origAddress": "802 Broadway"
+        }, {
+            "lat": "40.7371581633267",
+            "lon": "-73.9853137813165",
+            "name": "Brothhood Synagogue",
+            "address": "28 GRAMMERCY PARK S New York NY ",
+            "origAddress": "28 Grammercy Park South"
+        }, {
+            "lat": "40.7346489697825",
+            "lon": "-73.9860544344337",
+            "name": "Saint George Episcopal Church",
+            "address": "209 E 16TH ST New York NY ",
+            "origAddress": "209 East 16th Street"
+        }, {
+            "lat": "40.5913360380677",
+            "lon": "-73.9818486824745",
+            "name": "Church of the Nativity",
+            "address": "44 2ND AVE New York NY ",
+            "origAddress": "44 2nd Avenue"
+        }, {
+            "lat": "40.7389806770461",
+            "lon": "-74.0004662035248",
+            "name": "Our Lady of Guadalupe Church",
+            "address": "229 W 14TH ST New York NY ",
+            "origAddress": "229 West 14th Street"
+        }, {
+            "lat": "40.7389806770461",
+            "lon": "-74.0004662035248",
+            "name": "Our Lady of Guadalupe Church",
+            "address": "229 W 14TH ST New York NY ",
+            "origAddress": "229 West 14th Street"
+        }, {
+            "lat": "40.7381015874774",
+            "lon": "-74.0009719369804",
+            "name": "Lesbian, Gay, Bi-Sexual & Transgender Community Center",
+            "address": "208 W 13TH ST New York NY ",
+            "origAddress": "208 West 13th Street"
+        }, {
+            "lat": "40.7371581633267",
+            "lon": "-73.9853137813165",
+            "name": "Brotherhood Synagogue",
+            "address": "28 GRAMERCY PARK S New York NY ",
+            "origAddress": "28 Gramercy Park South"
+        }, {
+            "lat": "40.7381015874774",
+            "lon": "-74.0009719369804",
+            "name": "Lesbian, Gay, Bisexual, & Transgender Community Center",
+            "address": "208 W 13TH ST New York NY ",
+            "origAddress": "208 W 13th Street"
+        }, {
+            "lat": "40.7438841714917",
+            "lon": "-73.9889884484818",
+            "name": "The Upright Citizens Brigade Theatre",
+            "address": "1 307 W 26TH ST New York NY ",
+            "origAddress": "1) - 307 W. 26th St."
+        }, {
+            "lat": "40.7471694175559",
+            "lon": "-73.9987316903289",
+            "name": "St. Columba Church",
+            "address": "343 W 25TH ST New York NY ",
+            "origAddress": "343 West 25th Street"
+        }, {
+            "lat": "40.6639307188879",
+            "lon": "-73.9382749875207",
+            "name": "Theatre 80",
+            "address": "SAINT MARKS PL New York NY ",
+            "origAddress": "St. Mark's Place"
+        }, {
+            "lat": "40.7381015874774",
+            "lon": "-74.0009719369804",
+            "name": "Lesbian, Gay, Bi-Sexual & Transgender Community Center",
+            "address": "208 W 13TH ST New York NY ",
+            "origAddress": "208 West 13th Street"
+        }, {
+            "lat": "40.7408088821358",
+            "lon": "-73.9836251390165",
+            "name": "Intercare",
+            "address": "51 E 25TH ST New York NY ",
+            "origAddress": "51 East 25th Street"
+        }, {
+            "lat": "40.7385487033475",
+            "lon": "-73.9843107652274",
+            "name": "Gustavus Adolphus Church",
+            "address": "155 E 22ND ST New York NY ",
+            "origAddress": "155 East 22nd Street"
+        }, {
+            "lat": "40.6483895400048",
+            "lon": "-73.9705803172279",
+            "name": "Bronfman Center",
+            "address": "7 E 10TH ST New York NY ",
+            "origAddress": "7 East 10th Street"
+        }, {
+            "lat": "40.7448881630939",
+            "lon": "-73.9993530097064",
+            "name": "German Evangelist Lutheran Church of St. Paul",
+            "address": "315 W 22ND ST New York NY ",
+            "origAddress": "315 West 22nd Street"
+        }, {
+            "lat": "40.7338",
+            "lon": "-73.9851",
+            "name": "Friends Meeting House",
+            "address": "15 RUTHERFORD PL New York NY ",
+            "origAddress": "15 Rutherford Place"
+        }, {
+            "lat": "40.7365683507613",
+            "lon": "-73.9925963133779",
+            "name": "The Realization Center",
+            "address": "25 E 15TH CONFERENCE New York NY ",
+            "origAddress": "25 East 15th- Conference Room H"
+        }, {
+            "lat": "40.823374824522",
+            "lon": "-73.8091397830108",
+            "name": "General Theological Seminary",
+            "address": "175 9TH AVE New York NY ",
+            "origAddress": "175 9th Avenue"
+        }, {
+            "lat": "40.7361",
+            "lon": "-73.9912",
+            "name": "The Realization Center",
+            "address": "19 UNION SQ W New York NY ",
+            "origAddress": "19 Union Square West"
+        }, {
+            "lat": "40.7385487033475",
+            "lon": "-73.9843107652274",
+            "name": "Gustavus Adolphus Church",
+            "address": "155 E 22ND ST New York NY ",
+            "origAddress": "155 East 22nd Street"
+        }, {
+            "lat": "40.7365750204561",
+            "lon": "-73.9777724933453",
+            "name": "Veterans Administration Hospital",
+            "address": "423 E 23RD ST New York NY ",
+            "origAddress": "423 East 23rd Street"
+        }, {
+            "lat": "40.6447303448632",
+            "lon": "-73.9640552956335",
+            "name": "St. George's Church",
+            "address": "209 E 16TH ST New York NY ",
+            "origAddress": "209 East 16th Street"
+        }, {
+            "lat": "40.7300048121145",
+            "lon": "-73.983272777792",
+            "name": "",
+            "address": "411 E 12TH ST New York NY ",
+            "origAddress": "411 East 12th Street"
+        }, {
+            "lat": "40.7346489697825",
+            "lon": "-73.9860544344337",
+            "name": "St. George's Church",
+            "address": "209 E 16TH ST New York NY ",
+            "origAddress": "209 East 16th Street"
+        }, {
+            "lat": "40.6485917411313",
+            "lon": "-73.9595762284765",
+            "name": "Epiphany Roman Catholic Church",
+            "address": "239 E 21ST ST New York NY ",
+            "origAddress": "239 East 21st Street"
+        }, {
+            "lat": "40.7347362617638",
+            "lon": "-73.9949685934818",
+            "name": "First Presbyterian Church",
+            "address": "12 W 12TH ST New York NY ",
+            "origAddress": "12 West 12th Street"
+        }, {
+            "lat": "40.7251584813201",
+            "lon": "-73.9900663060002",
+            "name": "Church of the Nativity",
+            "address": "44 2ND AVE New York NY ",
+            "origAddress": "44 2nd Avenue"
+        }, {
+            "lat": "40.7381015874774",
+            "lon": "-74.0009719369804",
+            "name": "Lesbian, Gay, Bi-Sexual & Transgender Community Center",
+            "address": "208 W 13TH ST New York NY ",
+            "origAddress": "208 West 13th Street"
+        }, {
+            "lat": "40.7340978938148",
+            "lon": "-73.9954339239964",
+            "name": "Church of the Ascension Parish House",
+            "address": "12 W 11TH ST New York NY ",
+            "origAddress": "12 West 11th Street"
+        }, {
+            "lat": "40.7355527136856",
+            "lon": "-73.9988979600227",
+            "name": "PS 41 Elementary School",
+            "address": "116 W 11TH ST New York NY ",
+            "origAddress": "116 West 11th Street"
+        }, {
+            "lat": "40.6639307188879",
+            "lon": "-73.9382749875207",
+            "name": "",
+            "address": "12 II DOWNTOWN SATURDAY NIGHT 80 5TH AVE New York NY ",
+            "origAddress": "12 (:II)  DOWNTOWN SATURDAY NIGHT - 80 5th Avenue"
+        }, {
+            "lat": "40.7355527136856",
+            "lon": "-73.9988979600227",
+            "name": "P.S. 41 (see footnote re: temp location)",
+            "address": "116 W 11TH ST New York NY ",
+            "origAddress": "116 W. 11th Street"
+        }, {
+            "lat": "40.6456241405083",
+            "lon": "-73.9566432425704",
+            "name": "Gustavus Adolphus Church",
+            "address": "155 E 22ND ST New York NY ",
+            "origAddress": "155 East 22nd Street"
+        }, {
+            "lat": "40.6639307188879",
+            "lon": "-73.9382749875207",
+            "name": "East Midtown Plaza (Community Room H)",
+            "address": "319 EASTR 24TH ST New York NY ",
+            "origAddress": "319 Eastr 24th Street"
+        }, {
+            "lat": "40.7348417836113",
+            "lon": "-73.9897829129804",
+            "name": "Beth Israel Hospital @ Karpas Cancer Center Library",
+            "address": "10 E UNION SQ New York NY ",
+            "origAddress": "10 East Union Square"
+        }, {
+            "lat": "40.6639307188879",
+            "lon": "-73.9382749875207",
+            "name": "All Saints Ukrainian Orthodox Church",
+            "address": "206208 E 11TH ST New York NY ",
+            "origAddress": "206-208 East 11th Street"
+        }, {
+            "lat": "40.6470987877411",
+            "lon": "-73.9654484272783",
+            "name": "Seafarers & International House",
+            "address": "123 E 15TH ST New York NY ",
+            "origAddress": "123 East 15th Street"
+        }, {
+            "lat": "40.6639307188879",
+            "lon": "-73.9382749875207",
+            "name": "",
+            "address": "12TH STREET WORKSHOP 411 EAST 12TH ST New York NY ",
+            "origAddress": "12th STREET WORKSHOP - 411 East 12th Street"
+        }, {
+            "lat": "40.737690789482",
+            "lon": "-73.997394196627",
+            "name": "McBurney YMCA",
+            "address": "125 W 14TH ST New York NY ",
+            "origAddress": "125 West 14th Street"
+        }, {
+            "lat": "40.7381015874774",
+            "lon": "-74.0009719369804",
+            "name": "LGBT Community Center",
+            "address": "208 W 13TH ST New York NY ",
+            "origAddress": "208 West 13th Street"
+        }, {
+            "lat": "40.7348",
+            "lon": "-73.9898",
+            "name": "Beth Israel Phillips Ambulatory Center",
+            "address": "10 UNION SQ E New York NY ",
+            "origAddress": "10 Union Square East"
+        }, {
+            "lat": "40.742975462255",
+            "lon": "-73.9948187519044",
+            "name": "St. Francis Residence",
+            "address": "155 W 22ND ST New York NY ",
+            "origAddress": "155 West 22nd Street"
+        }, {
+            "lat": "40.7381015874774",
+            "lon": "-74.0009719369804",
+            "name": "Lesbian, Gay, Bi-Sexual & Transgender Community Center",
+            "address": "208 W 13TH ST New York NY ",
+            "origAddress": "208 West 13th Street"
+        }, {
+            "lat": "40.7347362617638",
+            "lon": "-73.9949685934818",
+            "name": "First Presbyterian Church",
+            "address": "12 W 12TH ST New York NY ",
+            "origAddress": "12 West 12th Street"
+        }, {
+            "lat": "40.7316971453221",
+            "lon": "-73.9977635466457",
+            "name": "The Caring Community",
+            "address": "60 20 WASHINGTON SQ N New York NY ",
+            "origAddress": "60 - 20 Washington Square North"
+        }, {
+            "lat": "40.7318206198245",
+            "lon": "-73.9839070535178",
+            "name": "14th Street Y",
+            "address": "344 E 14TH ST New York NY ",
+            "origAddress": "344 East 14th Street"
+        }, {
+            "lat": "40.742975462255",
+            "lon": "-73.9948187519044",
+            "name": "St. Francis Residence",
+            "address": "155 W 22ND ST New York NY ",
+            "origAddress": "155 West 22nd Street"
+        }, {
+            "lat": "40.7381015874774",
+            "lon": "-74.0009719369804",
+            "name": "Lesbian, Gay, Bi-Sexual & Transgender Community Center",
+            "address": "208 W 13TH ST New York NY ",
+            "origAddress": "208 West 13th Street"
+        }, {
+            "lat": "40.7256865491758",
+            "lon": "-73.9791544569912",
+            "name": "Trinity Lutheran Church",
+            "address": "602 E 9TH ST New York NY ",
+            "origAddress": "602 East 9th Street"
+        }, {
+            "lat": "40.7381015874774",
+            "lon": "-74.0009719369804",
+            "name": "Gay, Lesbian, Bi-Sexual & Transgender Community Center",
+            "address": "208 W 13TH ST New York NY ",
+            "origAddress": "208 West 13th Street"
+        }, {
+            "lat": "40.7381015874774",
+            "lon": "-74.0009719369804",
+            "name": "Lesbian, Gay, Bi-Sexual & Transgender Community Center",
+            "address": "208 W 13TH ST New York NY ",
+            "origAddress": "208 West 13th Street"
+        }, {
+            "lat": "40.7360946967377",
+            "lon": "-73.9912290994142",
+            "name": "Realization Center",
+            "address": "19 UNION SQ W New York NY ",
+            "origAddress": "19 Union Square West"
+        }, {
+            "lat": "40.7232829079073",
+            "lon": "-73.9841848212595",
+            "name": "Most Holy Redeemer Church",
+            "address": "173 E 3RD ST New York NY ",
+            "origAddress": "173 East 3rd Street- basement"
+        }, {
+            "lat": "40.6514010527302",
+            "lon": "-73.9749022931986",
+            "name": "Middle Collegiate Church ",
+            "address": "50 E 7TH ST New York NY ",
+            "origAddress": "50 East 7th Street"
+        }, {
+            "lat": "40.7591895426735",
+            "lon": "-73.9867385774772",
+            "name": "46th Street Club House",
+            "address": "252 W 46TH ST New York NY ",
+            "origAddress": "252 West 46th Street"
+        }, {
+            "lat": "40.6639307188879",
+            "lon": "-73.9382749875207",
+            "name": "",
+            "address": "42ND AT 900PM 303 WEST 42ND ST New York NY ",
+            "origAddress": "42nd AT 9:00pm - 303 West 42nd Street"
+        }, {
+            "lat": "40.7573472021927",
+            "lon": "-73.9898278386809",
+            "name": "",
+            "address": "303 W 42ND ST New York NY ",
+            "origAddress": "303 West 42nd Street"
+        }, {
+            "lat": "40.746749730357",
+            "lon": "-73.9936042690094",
+            "name": "S.A.G.E.",
+            "address": "305 7TH AVE New York NY ",
+            "origAddress": "305 7th Avenue"
+        }, {
+            "lat": "40.7605078757684",
+            "lon": "-73.9758124645304",
+            "name": "Saint Thomas Church",
+            "address": "1 W 53RD ST New York NY ",
+            "origAddress": "1 West 53rd Street"
+        }, {
+            "lat": "40.7573472021927",
+            "lon": "-73.9898278386809",
+            "name": "",
+            "address": "303 W 42ND ST New York NY ",
+            "origAddress": "303 West 42nd Street"
+        }, {
+            "lat": "40.7578644754971",
+            "lon": "-73.9831494978391",
+            "name": "St. Mary the Virgin Church",
+            "address": "133 W 46TH ST New York NY ",
+            "origAddress": "133 West 46th Street"
+        }, {
+            "lat": "40.7491018941578",
+            "lon": "-74.001388696334",
+            "name": "Hudson Guild",
+            "address": "441 W 26TH ST New York NY ",
+            "origAddress": "441 West 26th Street"
+        }, {
+            "lat": "40.7534748563734",
+            "lon": "-73.9988113218168",
+            "name": "GMHC",
+            "address": "446 W 33RD ST New York NY ",
+            "origAddress": "446 West 33rd Street"
+        }, {
+            "lat": "40.7591895426735",
+            "lon": "-73.9867385774772",
+            "name": "46th Street Clubhouse",
+            "address": "252 W 46TH ST New York NY ",
+            "origAddress": "252 West 46th Street"
+        }, {
+            "lat": "40.7591895426735",
+            "lon": "-73.9867385774772",
+            "name": "46th Street Club House",
+            "address": "252 W 46TH ST New York NY ",
+            "origAddress": "252 West 46th Street"
+        }, {
+            "lat": "40.7591895426735",
+            "lon": "-73.9867385774772",
+            "name": "46th Street Club House",
+            "address": "252 W 46TH ST New York NY ",
+            "origAddress": "252 West 46th Street"
+        }, {
+            "lat": "40.7609549990382",
+            "lon": "-73.9885447699323",
+            "name": "The Actor's Temple",
+            "address": "339 W 47TH ST New York NY ",
+            "origAddress": "339 West 47th Street"
+        }, {
+            "lat": "40.7573472021927",
+            "lon": "-73.9898278386809",
+            "name": "",
+            "address": "303 W 42ND ST New York NY ",
+            "origAddress": "303 West 42nd St Rm 306"
+        }, {
+            "lat": "40.7484468866129",
+            "lon": "-73.9902352468194",
+            "name": "St. Francis of Assisi Education Center",
+            "address": "139 W 31ST ST New York NY ",
+            "origAddress": "139 West 31st Street"
+        }, {
+            "lat": "40.7681070513278",
+            "lon": "-73.9863970797226",
+            "name": "Trinity Presbyterian Church",
+            "address": "422 W 57TH ST New York NY ",
+            "origAddress": "422 West 57th Street"
+        }, {
+            "lat": "40.7486793956479",
+            "lon": "-73.9927286472649",
+            "name": "St. John's Hall",
+            "address": "211 W 30TH ST New York NY ",
+            "origAddress": "211 West 30th Street"
+        }, {
+            "lat": "40.7591895426735",
+            "lon": "-73.9867385774772",
+            "name": "46th Street Club House",
+            "address": "252 W 46TH ST New York NY ",
+            "origAddress": "252 West 46th Street"
+        }, {
+            "lat": "40.7605078757684",
+            "lon": "-73.9758124645304",
+            "name": "St. Thomas Church",
+            "address": "1 W 53RD ST New York NY ",
+            "origAddress": "1 West 53rd Street"
+        }, {
+            "lat": "40.7681070513278",
+            "lon": "-73.9863970797226",
+            "name": "Trinity Presbyterian Church",
+            "address": "422 W 57TH ST New York NY ",
+            "origAddress": "422 West 57th Street"
+        }, {
+            "lat": "40.7618390938974",
+            "lon": "-73.975091742462",
+            "name": "Fifth Av Presbyterian Church",
+            "address": "7 W 55TH ST New York NY ",
+            "origAddress": "7 West 55th Street"
+        }, {
+            "lat": "40.7591895426735",
+            "lon": "-73.9867385774772",
+            "name": "46th Street Club House",
+            "address": "252 W 46TH ST New York NY ",
+            "origAddress": "252 West 46th Street"
+        }, {
+            "lat": "40.760037679013",
+            "lon": "-73.9839212337742",
+            "name": "The Actors Fund of America",
+            "address": "729 7TH AVE New York NY ",
+            "origAddress": "729 7th Avenue"
+        }, {
+            "lat": "40.763245485234",
+            "lon": "-73.9944361996955",
+            "name": "Apartment Building",
+            "address": "538 W 47TH ST New York NY ",
+            "origAddress": "538 West 47th Street"
+        }, {
+            "lat": "40.7700536177104",
+            "lon": "-73.9877635987168",
+            "name": "Mount Sinai - Roosevelt Hospital",
+            "address": "1000 TENTH AVE New York NY ",
+            "origAddress": "1000 Tenth Avenue"
+        }, {
+            "lat": "40.7573472021927",
+            "lon": "-73.9898278386809",
+            "name": "",
+            "address": "303 W 42ND ST New York NY ",
+            "origAddress": "303 West 42nd Street"
+        }, {
+            "lat": "40.7591895426735",
+            "lon": "-73.9867385774772",
+            "name": "46th Street Club House",
+            "address": "252 W 46TH ST New York NY ",
+            "origAddress": "252 West 46th Street"
+        }, {
+            "lat": "40.7473708388913",
+            "lon": "-73.9972612945271",
+            "name": "Upright Citizens Brigade Theatre",
+            "address": "307 W 26TH ST New York NY ",
+            "origAddress": "307 West 26th Street"
+        }, {
+            "lat": "40.7697787078634",
+            "lon": "-73.9858686267659",
+            "name": "St. Paul's Episcopal Parish House",
+            "address": "405 W 59TH ST New York NY ",
+            "origAddress": "405 West 59th Street"
+        }, {
+            "lat": "40.7573472021927",
+            "lon": "-73.9898278386809",
+            "name": "",
+            "address": "303 W 42ND ST New York NY ",
+            "origAddress": "303 West 42nd Street"
+        }, {
+            "lat": "40.7681070513278",
+            "lon": "-73.9863970797226",
+            "name": "Trinity Presbyterian Church ",
+            "address": "422 W 57TH ST New York NY ",
+            "origAddress": "422 W. 57th St."
+        }, {
+            "lat": "40.7578644754971",
+            "lon": "-73.9831494978391",
+            "name": "St. Mary the Virgin Church",
+            "address": "133 W 46TH ST New York NY ",
+            "origAddress": "133 West 46th Street"
+        }, {
+            "lat": "40.7578644754971",
+            "lon": "-73.9831494978391",
+            "name": "St. Mary the Virgin Church",
+            "address": "133 W 46TH ST New York NY ",
+            "origAddress": "133 West 46th Street"
+        }, {
+            "lat": "40.7573472021927",
+            "lon": "-73.9898278386809",
+            "name": "",
+            "address": "303 W 42ND ST New York NY ",
+            "origAddress": "303 West 42nd Street"
+        }, {
+            "lat": "40.8228042471098",
+            "lon": "-73.8091987304391",
+            "name": "Holy Apostles Church Rectory",
+            "address": "296 9TH AVE New York NY ",
+            "origAddress": "296 9th Avenue"
+        }, {
+            "lat": "40.7484468866129",
+            "lon": "-73.9902352468194",
+            "name": "St. Francis of Assisi Center",
+            "address": "139 W 31ST ST New York NY ",
+            "origAddress": "139 West 31st Street"
+        }, {
+            "lat": "40.7605078757684",
+            "lon": "-73.9758124645304",
+            "name": "St. Thomas Church",
+            "address": "1 W 53RD ST New York NY ",
+            "origAddress": "1 West 53rd Street"
+        }, {
+            "lat": "40.7600416876915",
+            "lon": "-73.9946015443691",
+            "name": "Manhattan Plaza Health Club",
+            "address": "484 W 43RD ST New York NY ",
+            "origAddress": "484 West 43rd Street"
+        }, {
+            "lat": "40.7618390938974",
+            "lon": "-73.975091742462",
+            "name": "Fifth Av Presbyterian Church",
+            "address": "7 W 55TH ST New York NY ",
+            "origAddress": "7 West 55th Street"
+        }, {
+            "lat": "40.7591895426735",
+            "lon": "-73.9867385774772",
+            "name": "46th Street Club House",
+            "address": "252 W 46TH ST New York NY ",
+            "origAddress": "252 West 46th Street"
+        }, {
+            "lat": "40.7591895426735",
+            "lon": "-73.9867385774772",
+            "name": "46th Street Club House",
+            "address": "252 W 46TH ST New York NY ",
+            "origAddress": "252 West 46th Street"
+        }, {
+            "lat": "40.7541070968091",
+            "lon": "-73.9805131973307",
+            "name": "The Learning Center",
+            "address": "4 W 43RD ST New York NY ",
+            "origAddress": "4 West 43rd Street"
+        }, {
+            "lat": "40.7591895426735",
+            "lon": "-73.9867385774772",
+            "name": "46th Street Club House",
+            "address": "252 W 46TH ST New York NY ",
+            "origAddress": "252 West 46th Street"
+        }, {
+            "lat": "40.7493642017494",
+            "lon": "-73.9991233310954",
+            "name": "Church of The Holy Apostles",
+            "address": "296 NINTH AVE New York NY ",
+            "origAddress": "296 Ninth Avenue"
+        }, {
+            "lat": "40.7605078757684",
+            "lon": "-73.9758124645304",
+            "name": "St. Thomas Church Parish House",
+            "address": "1 W 53RD ST New York NY ",
+            "origAddress": "1 West 53rd Street"
+        }, {
+            "lat": "40.7491443998598",
+            "lon": "-73.9923418714109",
+            "name": "St. John the Baptist Church",
+            "address": "210 W 31ST ST New York NY ",
+            "origAddress": "210 West 31st Street"
+        }, {
+            "lat": "40.7681070513278",
+            "lon": "-73.9863970797226",
+            "name": "Trinity Presbyterian Church",
+            "address": "422 W 57TH ST New York NY ",
+            "origAddress": "422 West 57th Street"
+        }, {
+            "lat": "40.7591895426735",
+            "lon": "-73.9867385774772",
+            "name": "46th Street Club House",
+            "address": "252 W 46TH ST New York NY ",
+            "origAddress": "252 West 46th Street"
+        }, {
+            "lat": "40.7469927833142",
+            "lon": "-73.9910926609818",
+            "name": "",
+            "address": "134 W 29TH ST New York NY ",
+            "origAddress": "134 West 29th Street - 2nd floor Studio 203"
+        }, {
+            "lat": "40.6639307188879",
+            "lon": "-73.9382749875207",
+            "name": "Mount Sinai - Roosevelt Hospital",
+            "address": "W 58TH ST New York NY ",
+            "origAddress": "West 58th Street"
+        }, {
+            "lat": "40.7534748563734",
+            "lon": "-73.9988113218168",
+            "name": "GMHC",
+            "address": "446 W 33RD ST New York NY ",
+            "origAddress": "446 West 33rd Street"
+        }, {
+            "lat": "40.7580872416746",
+            "lon": "-73.9841343506457",
+            "name": "St. Clements Church",
+            "address": "164 423 W 46TH ST New York NY ",
+            "origAddress": "164 - 423 West 46th Street"
+        }, {
+            "lat": "40.7591895426735",
+            "lon": "-73.9867385774772",
+            "name": "46th Street Club House",
+            "address": "252 W 46TH ST New York NY ",
+            "origAddress": "252 West 46th Street"
+        }, {
+            "lat": "40.7484070354431",
+            "lon": "-73.9788161102815",
+            "name": "",
+            "address": "122 E 37TH ST New York NY ",
+            "origAddress": "122 East 37th Street"
+        }, {
+            "lat": "40.6540049272587",
+            "lon": "-73.9451774713895",
+            "name": "",
+            "address": "30 E 35TH ST New York NY ",
+            "origAddress": "30 East 35th Street"
+        }, {
+            "lat": "40.7580414144455",
+            "lon": "-73.9646083965085",
+            "name": "Cathedral High School",
+            "address": "350 E 56TH ST New York NY ",
+            "origAddress": "350 East 56th Street"
+        }, {
+            "lat": "40.6894",
+            "lon": "-73.9368",
+            "name": "St. Peter's Lutheran Church @ Citicorp Center",
+            "address": "619 LEXINGTON AVE New York NY ",
+            "origAddress": "619 Lexington Avenue"
+        }, {
+            "lat": "40.6540144942404",
+            "lon": "-73.9432341596893",
+            "name": "",
+            "address": "122 E 37TH ST New York NY ",
+            "origAddress": "122 East 37th Street"
+        }, {
+            "lat": "40.6540370303515",
+            "lon": "-73.9451809146884",
+            "name": "J.H. Holmes Community House",
+            "address": "28 E 35TH ST New York NY ",
+            "origAddress": "28 East 35th Street"
+        }, {
+            "lat": "40.6492985267749",
+            "lon": "-73.9243803052476",
+            "name": "Cathedral High School ",
+            "address": "350 E 56TH ST New York NY ",
+            "origAddress": "350 East 56th Street "
+        }, {
+            "lat": "40.7480051470584",
+            "lon": "-73.9783823675783",
+            "name": "Soldiers, Sailors, Marines & Airmen's Club",
+            "address": "283 LEXINGTON AVE New York NY ",
+            "origAddress": "283 Lexington Avenue"
+        }, {
+            "lat": "40.6540144942404",
+            "lon": "-73.9432341596893",
+            "name": "",
+            "address": "122 E 37TH ST New York NY ",
+            "origAddress": "122 East 37th Street"
+        }, {
+            "lat": "40.7588098853474",
+            "lon": "-73.9704556871007",
+            "name": "St. Peter's Lutheran Church @ CitiCorp Center",
+            "address": "619 LEXINGTON AVE New York NY ",
+            "origAddress": "619 Lexington Avenue"
+        }, {
+            "lat": "40.6523881959639",
+            "lon": "-73.9371587997014",
+            "name": "Saint Agnes Church",
+            "address": "141 E 43RD ST New York NY ",
+            "origAddress": "141 East 43rd Street"
+        }, {
+            "lat": "40.6540144942404",
+            "lon": "-73.9432341596893",
+            "name": "MUSTARD SEED",
+            "address": "122 E 37TH ST New York NY ",
+            "origAddress": "122 E 37TH St."
+        }, {
+            "lat": "40.6540144942404",
+            "lon": "-73.9432341596893",
+            "name": "Mustard Seed",
+            "address": "122 E 37TH ST New York NY ",
+            "origAddress": "122 East 37th Street"
+        }, {
+            "lat": "40.6523881959639",
+            "lon": "-73.9371587997014",
+            "name": "St. Agnes Church",
+            "address": "141 E 43RD ST New York NY ",
+            "origAddress": "141 East 43rd Street"
+        }, {
+            "lat": "40.7486569855772",
+            "lon": "-73.9821268769989",
+            "name": "Church of the Incarnation",
+            "address": "209 MADISON AVE New York NY ",
+            "origAddress": "209 Madison Avenue"
+        }, {
+            "lat": "40.6540144942404",
+            "lon": "-73.9432341596893",
+            "name": "",
+            "address": "122 E 37TH ST New York NY ",
+            "origAddress": "122 East 37th Street"
+        }, {
+            "lat": "40.6894",
+            "lon": "-73.9368",
+            "name": "St. Peter's Lutheran Church @ CitiCorp Center",
+            "address": "619 LEXINGTON AVE New York NY ",
+            "origAddress": "619 Lexington Avenue"
+        }, {
+            "lat": "40.7433448015563",
+            "lon": "-73.9786012705583",
+            "name": "Church of the Good Shepherd",
+            "address": "240 E 31ST ST New York NY ",
+            "origAddress": "240 East 31st Street"
+        }, {
+            "lat": "40.7473679555663",
+            "lon": "-73.9801784542732",
+            "name": "The New York New Church",
+            "address": "114 E 35TH ST New York NY ",
+            "origAddress": "114 East 35th Street"
+        }, {
+            "lat": "40.7618052824589",
+            "lon": "-73.9654716790864",
+            "name": "ALL SAINTS CHURCH",
+            "address": "230 E 60TH ST New York NY ",
+            "origAddress": "230 East 60th Street (Basement) "
+        }, {
+            "lat": "40.6498884631618",
+            "lon": "-73.9225346093351",
+            "name": "Caron Foundation",
+            "address": "244 E 58TH ST New York NY ",
+            "origAddress": "244 East 58th Street"
+        }, {
+            "lat": "40.6894",
+            "lon": "-73.9368",
+            "name": "St. Peter's Lutheran Church @ CitiCorp Center",
+            "address": "619 LEXINGTON AVE New York NY ",
+            "origAddress": "619 Lexington Avenue"
+        }, {
+            "lat": "40.7574634720886",
+            "lon": "-73.9733951693811",
+            "name": "St. Bartholomew's Church",
+            "address": "325 PARK AVE New York NY ",
+            "origAddress": "325 Park Avenue"
+        }, {
+            "lat": "40.6505765075228",
+            "lon": "-73.9486532634037",
+            "name": "CHURCH OF THE GOOD SHEPARD",
+            "address": "12 236 E 31ST ST New York NY ",
+            "origAddress": "12 - 236 EAST 31st STREET "
+        }, {
+            "lat": "40.6502318973681",
+            "lon": "-73.9254638554268",
+            "name": "Conservative Synagogue",
+            "address": "308 E 55TH ST New York NY ",
+            "origAddress": "308 East 55th Street"
+        }, {
+            "lat": "40.6498884631618",
+            "lon": "-73.9225346093351",
+            "name": "The Caron Foundation",
+            "address": "244 E 58TH ST New York NY ",
+            "origAddress": "244 East 58th Street"
+        }, {
+            "lat": "40.6498884631618",
+            "lon": "-73.9225346093351",
+            "name": "Caron Foundation",
+            "address": "244 E 58TH ST New York NY ",
+            "origAddress": "244 East 58th Street"
+        }, {
+            "lat": "40.7570109520275",
+            "lon": "-73.9733483642645",
+            "name": "",
+            "address": "109 E 50TH ST New York NY ",
+            "origAddress": "109 East 50th Street"
+        }, {
+            "lat": "40.794213540618",
+            "lon": "-73.9705213185661",
+            "name": "Holy Name Church",
+            "address": "207 W 96TH ST New York NY ",
+            "origAddress": "207 West 96th Street"
+        }, {
+            "lat": "40.7755654476221",
+            "lon": "-73.9806385532506",
+            "name": "Christ & St. Stephen's Church",
+            "address": "120 W 69TH ST New York NY ",
+            "origAddress": "120 West 69th Street"
+        }, {
+            "lat": "40.7681070513278",
+            "lon": "-73.9863970797226",
+            "name": "Trinity Presbyterian Church",
+            "address": "422 W 57TH ST New York NY ",
+            "origAddress": "422 West 57th Street"
+        }, {
+            "lat": "40.7794255507423",
+            "lon": "-73.9797175099267",
+            "name": "Phoenix House",
+            "address": "164 W 74TH ST New York NY ",
+            "origAddress": "164 West 74th Street"
+        }, {
+            "lat": "40.794213540618",
+            "lon": "-73.9705213185661",
+            "name": "Holy Name Church",
+            "address": "207 W 96TH ST New York NY ",
+            "origAddress": "207 West 96th Street"
+        }, {
+            "lat": "40.7897029664383",
+            "lon": "-73.9720897206413",
+            "name": "St. Gregory's Church",
+            "address": "144 W 90TH ST New York NY ",
+            "origAddress": "144 West 90th Street"
+        }, {
+            "lat": "40.7786676707999",
+            "lon": "-73.9794206828762",
+            "name": "Hamilton House",
+            "address": "141 W 73RD ST New York NY ",
+            "origAddress": "141 West 73rd Street"
+        }, {
+            "lat": "40.7787527067962",
+            "lon": "-73.9741749847811",
+            "name": "Fourth Universalist Church",
+            "address": "4 W 76TH IN ST New York NY ",
+            "origAddress": "4 West 76th Street. Meeting in the gym."
+        }, {
+            "lat": "40.8014194326656",
+            "lon": "-73.965712913103",
+            "name": "Church of the Ascension",
+            "address": "221 W 107TH ST New York NY ",
+            "origAddress": "221 West 107th Street"
+        }, {
+            "lat": "40.6639307188879",
+            "lon": "-73.9382749875207",
+            "name": "Holy Name Church",
+            "address": "96TH BROADWAY AT 96TH207 WEST 96TH ST New York NY ",
+            "origAddress": "96TH - Broadway At 96th207 West 96th Street"
+        }, {
+            "lat": "40.7852818734432",
+            "lon": "-73.9771060064311",
+            "name": "Holy Trinity Rectory",
+            "address": "215 W 82ND ST New York NY ",
+            "origAddress": "215 West 82nd Street"
+        }, {
+            "lat": "40.806792168115",
+            "lon": "-73.9648182706744",
+            "name": "Broadway Presbyterian Church",
+            "address": "601 W 114TH ST New York NY ",
+            "origAddress": "601 West 114th Street"
+        }, {
+            "lat": "40.6639307188879",
+            "lon": "-73.9382749875207",
+            "name": "Universalist Church",
+            "address": "76TH ST New York NY ",
+            "origAddress": "76th Street - basement gymnasium"
+        }, {
+            "lat": "40.7706369459873",
+            "lon": "-73.9801360925244",
+            "name": "West Side YMCA at 63rd Street",
+            "address": "5 W 63RD ST New York NY ",
+            "origAddress": "5 West 63rd Street"
+        }, {
+            "lat": "40.7787527067962",
+            "lon": "-73.9741749847811",
+            "name": "Universalist Church",
+            "address": "4 W 76TH ST New York NY ",
+            "origAddress": "4 West 76th Street"
+        }, {
+            "lat": "40.7787794973326",
+            "lon": "-73.9743080403139",
+            "name": "Fourth Universalist Society",
+            "address": "160 CENTRAL PARK W New York NY ",
+            "origAddress": "160 Central Park West"
+        }, {
+            "lat": "40.7745154157361",
+            "lon": "-73.9839560220244",
+            "name": "Good Shepherd Faith Church",
+            "address": "152 W 66TH ST New York NY ",
+            "origAddress": "152 West 66th Street"
+        }, {
+            "lat": "40.7911041586476",
+            "lon": "-73.9652137815578",
+            "name": "Second Presbyterian Church",
+            "address": "3 W 95TH ST New York NY ",
+            "origAddress": "3 West 95th Street"
+        }, {
+            "lat": "40.7846682032335",
+            "lon": "-73.9795816951321",
+            "name": "All Angels Church",
+            "address": "251 W 80TH ST New York NY ",
+            "origAddress": "251 West 80th Street"
+        }, {
+            "lat": "40.7778588431339",
+            "lon": "-73.9817266749472",
+            "name": "Hargrave House",
+            "address": "111 W 71ST ST New York NY ",
+            "origAddress": "111 West 71st Street"
+        }, {
+            "lat": "40.7706369459873",
+            "lon": "-73.9801360925244",
+            "name": "West Side YMCA",
+            "address": "5 W 63RD ST New York NY ",
+            "origAddress": "5 West 63rd Street"
+        }, {
+            "lat": "40.7706369459873",
+            "lon": "-73.9801360925244",
+            "name": "West Side YMCA",
+            "address": "5 W 63RD ST New York NY ",
+            "origAddress": "5 West 63rd Street"
+        }, {
+            "lat": "40.794213540618",
+            "lon": "-73.9705213185661",
+            "name": "Holy Name Church",
+            "address": "207 W 96TH ST New York NY ",
+            "origAddress": "207 West 96th Street"
+        }, {
+            "lat": "40.7841938596871",
+            "lon": "-73.9710515495699",
+            "name": "Church of St. Matthew and St. Timothy",
+            "address": "26 W 84TH ST New York NY ",
+            "origAddress": "26 West 84th Street"
+        }, {
+            "lat": "40.7946604892952",
+            "lon": "-73.9699229082063",
+            "name": "Holy Name School",
+            "address": "200 W 97TH ST New York NY ",
+            "origAddress": "200 West 97th Street"
+        }, {
+            "lat": "40.6639307188879",
+            "lon": "-73.9382749875207",
+            "name": "Grace House",
+            "address": "24 GRUPO DULCES 24218 WEST 108TH ST New York NY ",
+            "origAddress": "24 - Grupo Dulces 24218 West 108th Street"
+        }, {
+            "lat": "40.7987406120379",
+            "lon": "-73.9655262153158",
+            "name": "Iglesia Metodista Grace",
+            "address": "125 W 104TH ST New York NY ",
+            "origAddress": "125 West 104th Street"
+        }, {
+            "lat": "40.7786676707999",
+            "lon": "-73.9794206828762",
+            "name": "Hamilton House",
+            "address": "141 W 73RD ST New York NY ",
+            "origAddress": "141 West 73rd Street"
+        }, {
+            "lat": "40.7797419736686",
+            "lon": "-73.9824391794657",
+            "name": "Rutgers Church",
+            "address": "236 W 73RD ST New York NY ",
+            "origAddress": "236 West 73rd Street"
+        }, {
+            "lat": "40.7994268657992",
+            "lon": "-73.9651796384307",
+            "name": "West End Presbyterian Church",
+            "address": "165 W 105TH ST New York NY ",
+            "origAddress": "165 West 105th Street"
+        }, {
+            "lat": "40.794213540618",
+            "lon": "-73.9705213185661",
+            "name": "Holy Name Church",
+            "address": "207 W 96TH ST New York NY ",
+            "origAddress": "207 West 96th Street"
+        }, {
+            "lat": "40.794213540618",
+            "lon": "-73.9705213185661",
+            "name": "Holy Name Church Rectory",
+            "address": "207 W 96TH ST New York NY ",
+            "origAddress": "207 West 96th Street"
+        }, {
+            "lat": "40.79276170855",
+            "lon": "-73.9728434697471",
+            "name": "Advent Lutheran Church",
+            "address": "2504 BROADWAY New York NY ",
+            "origAddress": "2504 Broadway"
+        }, {
+            "lat": "40.8048256658321",
+            "lon": "-73.9601273784998",
+            "name": "Church of Notre Dame",
+            "address": "405 W 114TH ST New York NY ",
+            "origAddress": "405 West 114th Street"
+        }, {
+            "lat": "40.7832332498012",
+            "lon": "-73.9817586862341",
+            "name": "West End Collegiate Church",
+            "address": "368 W END AVE New York NY ",
+            "origAddress": "368 West End Ave"
+        }, {
+            "lat": "40.7964563991192",
+            "lon": "-73.9698142603959",
+            "name": "St. Michael's Parish House",
+            "address": "225 W 99TH ST New York NY ",
+            "origAddress": "225 West 99th Street"
+        }, {
+            "lat": "40.7975126103017",
+            "lon": "-73.9703865089032",
+            "name": "Anshe Chesed Synagogue",
+            "address": "251 W 100TH ST New York NY ",
+            "origAddress": "251 West 100th Street"
+        }, {
+            "lat": "40.794213540618",
+            "lon": "-73.9705213185661",
+            "name": "Holy Name Church",
+            "address": "207 W 96TH ST New York NY ",
+            "origAddress": "207 West 96th Street"
+        }, {
+            "lat": "40.7841938596871",
+            "lon": "-73.9710515495699",
+            "name": "Church of St. Matthew & St. Timothy",
+            "address": "26 W 84TH ST New York NY ",
+            "origAddress": "26 West 84th Street"
+        }, {
+            "lat": "40.7706369459873",
+            "lon": "-73.9801360925244",
+            "name": "West Side YMCA",
+            "address": "5 W 63RD ST New York NY ",
+            "origAddress": "5 West 63rd Street"
+        }, {
+            "lat": "40.7893",
+            "lon": "-73.9773",
+            "name": "St. Ignatius Church",
+            "address": "552 W END AVE New York NY ",
+            "origAddress": "552 West End Avenue"
+        }, {
+            "lat": "40.7794255507423",
+            "lon": "-73.9797175099267",
+            "name": "Phoenix House",
+            "address": "164 W 74 ST New York NY ",
+            "origAddress": "164 West 74 Street"
+        }, {
+            "lat": "40.7886669980932",
+            "lon": "-73.979694394257",
+            "name": "Volunteers of America",
+            "address": "340 W 85TH ST New York NY ",
+            "origAddress": "340 West 85th Street"
+        }, {
+            "lat": "40.7832332498012",
+            "lon": "-73.9817586862341",
+            "name": "West End Collegiate Church",
+            "address": "368 W END AVE New York NY ",
+            "origAddress": "368 West End Avenue"
+        }, {
+            "lat": "40.7772016417146",
+            "lon": "-73.9806325775781",
+            "name": "Blessed Sacrament Church Rectory",
+            "address": "152 W 71ST ST New York NY ",
+            "origAddress": "152 West 71st Street"
+        }, {
+            "lat": "40.7706369459873",
+            "lon": "-73.9801360925244",
+            "name": "West Side YMCA",
+            "address": "5 W 63RD ST New York NY ",
+            "origAddress": "5 West 63rd Street"
+        }, {
+            "lat": "40.7778619659525",
+            "lon": "-73.9796338969511",
+            "name": "",
+            "address": "131 W 72ND ST New York NY ",
+            "origAddress": "131 West 72nd Street"
+        }, {
+            "lat": "40.794213540618",
+            "lon": "-73.9705213185661",
+            "name": "Holy Name Church",
+            "address": "207 W 96TH ST New York NY ",
+            "origAddress": "207 West 96th Street"
+        }, {
+            "lat": "40.7772016417146",
+            "lon": "-73.9806325775781",
+            "name": "Blessed Sacrament Church Rectory",
+            "address": "152 W 71ST ST New York NY ",
+            "origAddress": "152 West 71st Street"
+        }, {
+            "lat": "40.7739244423422",
+            "lon": "-73.9786943991706",
+            "name": "Stephen Wise Free Synagogue",
+            "address": "30 W 68TH ST New York NY ",
+            "origAddress": "30 West 68th Street"
+        }, {
+            "lat": "40.794213540618",
+            "lon": "-73.9705213185661",
+            "name": "Holy Name Church",
+            "address": "207 W 96TH ST New York NY ",
+            "origAddress": "207 West 96th Street"
+        }, {
+            "lat": "40.7885417036581",
+            "lon": "-73.9768136256861",
+            "name": "Church of St. Paul & St. Andrew",
+            "address": "263 W 86TH ST New York NY ",
+            "origAddress": "263 West 86th Street"
+        }, {
+            "lat": "40.7990296730168",
+            "lon": "-73.970556588718",
+            "name": "Addiction Institute",
+            "address": "306 W 102ND ST New York NY ",
+            "origAddress": "306 West 102nd Street"
+        }, {
+            "lat": "40.7772016417146",
+            "lon": "-73.9806325775781",
+            "name": "Blessed Sacrament Church Rectory",
+            "address": "152 W 71ST ST New York NY ",
+            "origAddress": "152 West 71st Street"
+        }, {
+            "lat": "40.7841938596871",
+            "lon": "-73.9710515495699",
+            "name": "Church of St.Matthew & St. Timothy",
+            "address": "26 W 84TH ST New York NY ",
+            "origAddress": "26 West 84th Street"
+        }, {
+            "lat": "40.7879974802396",
+            "lon": "-73.9707623416289",
+            "name": "Goddard Riverside Community Center",
+            "address": "595 COLUMBUS AVE New York NY ",
+            "origAddress": "595 Columbus Avenue"
+        }, {
+            "lat": "40.7990296730168",
+            "lon": "-73.970556588718",
+            "name": "Trinity Halfway House",
+            "address": "306 W 102ND ST New York NY ",
+            "origAddress": "306 West 102nd Street"
+        }, {
+            "lat": "40.7852679542513",
+            "lon": "-73.9770730367342",
+            "name": "Holy Trinity Church",
+            "address": "213 W 82ND ST New York NY ",
+            "origAddress": "213 West 82nd Street"
+        }, {
+            "lat": "40.7772016417146",
+            "lon": "-73.9806325775781",
+            "name": "Blessed Sacrament (Rectory)",
+            "address": "152 W 71ST ST New York NY ",
+            "origAddress": "152 West 71st Street"
+        }, {
+            "lat": "40.7772016417146",
+            "lon": "-73.9806325775781",
+            "name": "",
+            "address": "152 W 71ST ST New York NY ",
+            "origAddress": "152 west 71st street"
+        }, {
+            "lat": "40.7772016417146",
+            "lon": "-73.9806325775781",
+            "name": "Blessed Sacrament (Rectory)",
+            "address": "152 W 71ST ST New York NY ",
+            "origAddress": "152 West 71st Street"
+        }, {
+            "lat": "40.7788",
+            "lon": "-73.9743",
+            "name": "Universalist Church",
+            "address": "160 CENTRAL PARK W New York NY ",
+            "origAddress": "160 Central Park West"
+        }, {
+            "lat": "40.794213540618",
+            "lon": "-73.9705213185661",
+            "name": "Holy Name Church",
+            "address": "207 W 96TH ST New York NY ",
+            "origAddress": "207 West 96th Street"
+        }, {
+            "lat": "40.7696928502877",
+            "lon": "-73.9561615460009",
+            "name": "Jan Hus Church",
+            "address": "351 E 74TH ST New York NY ",
+            "origAddress": "351 East 74th Street"
+        }, {
+            "lat": "40.7768220721206",
+            "lon": "-73.9614309247863",
+            "name": "Manhattan Church of Christ",
+            "address": "48 E 80TH ST New York NY ",
+            "origAddress": "48 East 80th Street"
+        }, {
+            "lat": "40.7729024777959",
+            "lon": "-73.960301601538",
+            "name": "St. Jean Baptiste Church",
+            "address": "184 E 76TH ST New York NY ",
+            "origAddress": "184 East 76th Street"
+        }, {
+            "lat": "40.7696928502877",
+            "lon": "-73.9561615460009",
+            "name": "Jan Hus Church",
+            "address": "351 E 74TH ST New York NY ",
+            "origAddress": "351 East 74th Street"
+        }, {
+            "lat": "40.768423245228",
+            "lon": "-73.952835575681",
+            "name": "Church of the Epiphany",
+            "address": "1393 YORK AVE New York NY ",
+            "origAddress": "1393 York Avenue"
+        }, {
+            "lat": "40.7638025340206",
+            "lon": "-73.9694752938161",
+            "name": "Christ United Methodist Church",
+            "address": "520 PARK AVE New York NY ",
+            "origAddress": "520 Park Avenue"
+        }, {
+            "lat": "40.7698342644291",
+            "lon": "-73.9564962732736",
+            "name": "Archdiocian Cathedral of the Holy Trinity",
+            "address": "337 E 74TH ST New York NY ",
+            "origAddress": "337 E. 74th St."
+        }, {
+            "lat": "40.7754",
+            "lon": "-73.9584",
+            "name": "All Souls Church",
+            "address": "1157 LEXINGTON AVE New York NY ",
+            "origAddress": "1157 Lexington Avenue"
+        }, {
+            "lat": "40.7701096895349",
+            "lon": "-73.9536801743601",
+            "name": "Gracie Square Hospital",
+            "address": "420 E 76TH ST New York NY ",
+            "origAddress": "420 East 76th Street"
+        }, {
+            "lat": "40.7810111151832",
+            "lon": "-73.9514664469095",
+            "name": "Our Lady of Good Counsel Church",
+            "address": "230 E 90TH ST New York NY ",
+            "origAddress": "230 East 90th Street"
+        }, {
+            "lat": "40.6512891458602",
+            "lon": "-73.9194885249005",
+            "name": "St. Thomas More Church",
+            "address": "65 E 89TH ST New York NY ",
+            "origAddress": "65 East 89th Street"
+        }, {
+            "lat": "40.7713",
+            "lon": "-73.9656",
+            "name": "St. James Episcopal Church",
+            "address": "865 MADISON AVE New York NY ",
+            "origAddress": "865 Madison Avenue"
+        }, {
+            "lat": "40.780135833909",
+            "lon": "-73.9552304898083",
+            "name": "Immanuel Lutheran Church",
+            "address": "1296 LEXINGTON AVE New York NY ",
+            "origAddress": "1296 Lexington Avenue"
+        }, {
+            "lat": "40.7696928502877",
+            "lon": "-73.9561615460009",
+            "name": "Jan Hus Church",
+            "address": "351 E 74TH ST New York NY ",
+            "origAddress": "351 East 74th Street"
+        }, {
+            "lat": "40.7754",
+            "lon": "-73.9584",
+            "name": "All Souls Uniterian Church",
+            "address": "1157 LEXINGTON AVE New York NY ",
+            "origAddress": "1157 Lexington Avenue"
+        }, {
+            "lat": "40.7696928502877",
+            "lon": "-73.9561615460009",
+            "name": "Jan Hus Church",
+            "address": "351 E 74TH ST New York NY ",
+            "origAddress": "351 East 74th Street"
+        }, {
+            "lat": "40.7696928502877",
+            "lon": "-73.9561615460009",
+            "name": "Jan Hus Church",
+            "address": "351 E 74TH ST New York NY ",
+            "origAddress": "351 East 74th Street"
+        }, {
+            "lat": "40.7825781068574",
+            "lon": "-73.956669661672",
+            "name": "St. Thomas More Church Rectory",
+            "address": "65 E 89TH ST New York NY ",
+            "origAddress": "65 East 89th Street"
+        }, {
+            "lat": "40.6512891458602",
+            "lon": "-73.9194885249005",
+            "name": "Church of Saint Thomas Moore",
+            "address": "65 E 89TH ST New York NY ",
+            "origAddress": "65 East 89th Street"
+        }, {
+            "lat": "40.7696928502877",
+            "lon": "-73.9561615460009",
+            "name": "Jan Hus Church",
+            "address": "351 E 74TH ST New York NY ",
+            "origAddress": "351 East 74th Street"
+        }, {
+            "lat": "40.7861511194995",
+            "lon": "-73.9513726613579",
+            "name": "St. Francis de Sales Church",
+            "address": "135 E 96TH ST New York NY ",
+            "origAddress": "135 East 96th Street"
+        }, {
+            "lat": "40.7696928502877",
+            "lon": "-73.9561615460009",
+            "name": "Jan Hus Presbyterian Church",
+            "address": "351 E 74TH ST New York NY ",
+            "origAddress": "351 East 74th Street"
+        }, {
+            "lat": "40.7840115307841",
+            "lon": "-73.9585847103751",
+            "name": "Church of the Heavenly Rest",
+            "address": "2 E 90TH ST New York NY ",
+            "origAddress": "2 East 90th Street"
+        }, {
+            "lat": "40.7754537712743",
+            "lon": "-73.9583651919557",
+            "name": "All Souls Uniterian Church",
+            "address": "1157 LEXINGTON AVE New York NY ",
+            "origAddress": "1157 Lexington Avenue"
+        }, {
+            "lat": "40.7701096895349",
+            "lon": "-73.9536801743601",
+            "name": "Gracie Square Hospital",
+            "address": "420 E 76TH ST New York NY ",
+            "origAddress": "420 East 76th Street"
+        }, {
+            "lat": "40.7696928502877",
+            "lon": "-73.9561615460009",
+            "name": "Jan Hus Presbyterian Church",
+            "address": "351 E 74TH ST New York NY ",
+            "origAddress": "351 East 74th Street"
+        }, {
+            "lat": "40.7696928502877",
+            "lon": "-73.9561615460009",
+            "name": "Jan Hus Church",
+            "address": "351 E 74TH ST New York NY ",
+            "origAddress": "351 East 74th Street"
+        }, {
+            "lat": "40.7843271566301",
+            "lon": "-73.9560938594834",
+            "name": "Philomathist Center",
+            "address": "1285 MADISON AVE New York NY ",
+            "origAddress": "1285 Madison Avenue"
+        }, {
+            "lat": "40.7793609621452",
+            "lon": "-73.9595772935813",
+            "name": "St. Ignatius Loyola School",
+            "address": "48 E 84TH ST New York NY ",
+            "origAddress": "48 East 84th Street"
+        }, {
+            "lat": "40.7741274706806",
+            "lon": "-73.9511027458637",
+            "name": "St. Stephen of Hungary Church",
+            "address": "408 E 82ND ST New York NY ",
+            "origAddress": "408 East 82nd Street"
+        }, {
+            "lat": "40.7696928502877",
+            "lon": "-73.9561615460009",
+            "name": "Jan Hus Church",
+            "address": "351 E 74TH ST New York NY ",
+            "origAddress": "351 East 74th Street"
+        }, {
+            "lat": "40.7696928502877",
+            "lon": "-73.9561615460009",
+            "name": "Jan Hus Church",
+            "address": "351 E 74TH ST New York NY ",
+            "origAddress": "351 East 74th Street"
+        }, {
+            "lat": "40.779171458173",
+            "lon": "-73.9566990114508",
+            "name": "Congregational Kehilath Jeshurun",
+            "address": "125 E 85TH ST New York NY ",
+            "origAddress": "125 East 85th Street"
+        }, {
+            "lat": "40.7696928502877",
+            "lon": "-73.9561615460009",
+            "name": "Jan Hus Church",
+            "address": "351 E 74TH ST New York NY ",
+            "origAddress": "351 East 74th Street"
+        }, {
+            "lat": "40.7696928502877",
+            "lon": "-73.9561615460009",
+            "name": "Jan Hus Church",
+            "address": "351 E 74TH ST New York NY ",
+            "origAddress": "351 East 74th Street"
+        }, {
+            "lat": "40.771333373478",
+            "lon": "-73.9655866478562",
+            "name": "St. James Church",
+            "address": "865 MADISON AVE New York NY ",
+            "origAddress": "865 Madison Avenue"
+        }, {
+            "lat": "40.7843589236057",
+            "lon": "-73.95552298444",
+            "name": "Brick Church Parish House",
+            "address": "62 E 92ND ST New York NY ",
+            "origAddress": "62 East 92nd Street"
+        }, {
+            "lat": "40.7696928502877",
+            "lon": "-73.9561615460009",
+            "name": "Jan Hus Church",
+            "address": "351 E 74TH ST New York NY ",
+            "origAddress": "351 East 74th Street"
+        }, {
+            "lat": "40.7772735074771",
+            "lon": "-73.9484486458256",
+            "name": "St. Joseph's School",
+            "address": "420 E 87TH ST New York NY ",
+            "origAddress": "420 East 87th Street"
+        }, {
+            "lat": "40.7658",
+            "lon": "-73.9673",
+            "name": "Central Presbyterian Church",
+            "address": "593 PARK AVE New York NY ",
+            "origAddress": "593 Park Avenue"
+        }, {
+            "lat": "40.6512891458602",
+            "lon": "-73.9194885249005",
+            "name": "St. Thomas More Church",
+            "address": "65 E 89TH ST New York NY ",
+            "origAddress": "65 East 89th Street"
+        }, {
+            "lat": "40.771333373478",
+            "lon": "-73.9655866478562",
+            "name": "St. James Episcopal Church",
+            "address": "865 MADISON AVE New York NY ",
+            "origAddress": "865 Madison Avenue"
+        }, {
+            "lat": "40.5015308291755",
+            "lon": "-74.2441188807621",
+            "name": "",
+            "address": "543 MAIN ST New York NY ",
+            "origAddress": "543 Main St."
+        }, {
+            "lat": "40.7723031543769",
+            "lon": "-73.9523668002645",
+            "name": "St. Monica's Church",
+            "address": "413 E 79TH ST New York NY ",
+            "origAddress": "413 East 79th Street"
+        }, {
+            "lat": "40.7696928502877",
+            "lon": "-73.9561615460009",
+            "name": "Jan Hus Church",
+            "address": "351 E 74TH ST New York NY ",
+            "origAddress": "351 East 74th Street"
+        }, {
+            "lat": "40.7654252580644",
+            "lon": "-73.9604736729911",
+            "name": "New York Blood Center",
+            "address": "310 E 67TH ST New York NY ",
+            "origAddress": "310 East 67th Street"
+        }, {
+            "lat": "40.7672680018812",
+            "lon": "-73.9585554286266",
+            "name": "Lenox Hill Neighborhood House",
+            "address": "331 E 70TH ST New York NY ",
+            "origAddress": "331 E 70th St"
+        }, {
+            "lat": "40.7652239673107",
+            "lon": "-73.9575950012117",
+            "name": "Church of St. Catherine of Siena",
+            "address": "411 E 68TH ST New York NY ",
+            "origAddress": "411 East 68th Street"
+        }, {
+            "lat": "40.7840115307841",
+            "lon": "-73.9585847103751",
+            "name": "Church of the Heavenly Rest",
+            "address": "2 E 90TH ST New York NY ",
+            "origAddress": "2 East 90th Street"
+        }, {
+            "lat": "40.646564825294",
+            "lon": "-73.9166804813545",
+            "name": "Holy Trinity Church",
+            "address": "341 E 87TH ST New York NY ",
+            "origAddress": "341 East 87th Street"
+        }, {
+            "lat": "40.7696928502877",
+            "lon": "-73.9561615460009",
+            "name": "Jan Hus Church",
+            "address": "351 E 74TH ST New York NY ",
+            "origAddress": "351 East 74th Street"
+        }, {
+            "lat": "40.7696928502877",
+            "lon": "-73.9561615460009",
+            "name": "Jan Hus Church",
+            "address": "351 E 74TH ST New York NY ",
+            "origAddress": "351 East 74th Street"
+        }, {
+            "lat": "40.7696928502877",
+            "lon": "-73.9561615460009",
+            "name": "Jan Hus Church",
+            "address": "351 E 74TH ST New York NY ",
+            "origAddress": "351 East 74th Street"
+        }, {
+            "lat": "40.8105033439451",
+            "lon": "-73.9438349756133",
+            "name": "SRO Building",
+            "address": "109 W 129TH ST New York NY ",
+            "origAddress": "109 West 129th Street"
+        }, {
+            "lat": "40.8220449603096",
+            "lon": "-73.9402738669626",
+            "name": "Union Baptist Church",
+            "address": "240 W 145TH ST New York NY ",
+            "origAddress": "240 West 145th Street"
+        }, {
+            "lat": "40.8232200234845",
+            "lon": "-73.9485449135295",
+            "name": "Our Lady of Lourdes Church",
+            "address": "469 W 142ND ST New York NY ",
+            "origAddress": "469 West 142nd Street"
+        }, {
+            "lat": "40.8146053686072",
+            "lon": "-73.9443570754889",
+            "name": "St. Phillip Church",
+            "address": "204 W 134TH ST New York NY ",
+            "origAddress": "204 West 134th Street"
+        }, {
+            "lat": "40.8072665297278",
+            "lon": "-73.9499061022154",
+            "name": "Spiritual Renewal Church",
+            "address": "2044 ADAM CLAYTON POWELL BLVD New York NY ",
+            "origAddress": "2044 Adam Clayton Powell Blvd."
+        }, {
+            "lat": "40.8232200234845",
+            "lon": "-73.9485449135295",
+            "name": "",
+            "address": "469 W 142ND ST New York NY ",
+            "origAddress": "469 West 142nd Street"
+        }, {
+            "lat": "40.8144929933342",
+            "lon": "-73.9558896362264",
+            "name": "St. Mary's Episcopal",
+            "address": "521 W 126TH ST New York NY ",
+            "origAddress": "521 W 126th St"
+        }, {
+            "lat": "40.8105033439451",
+            "lon": "-73.9438349756133",
+            "name": "SRO Building Community Room",
+            "address": "109 W 129TH ST New York NY ",
+            "origAddress": "109 West 129th Street"
+        }, {
+            "lat": "40.8232200234845",
+            "lon": "-73.9485449135295",
+            "name": "Our Lady of Lourdes",
+            "address": "469 W 142ND ST New York NY ",
+            "origAddress": "469 West 142nd Street"
+        }, {
+            "lat": "40.8071759186691",
+            "lon": "-73.9497519327616",
+            "name": "",
+            "address": "2044 SEVENTH AVE New York NY ",
+            "origAddress": "2044 Seventh Avenue"
+        }, {
+            "lat": "40.8094766772235",
+            "lon": "-73.9452613355488",
+            "name": "S.A.G.E.",
+            "address": "127 W 127TH ST New York NY ",
+            "origAddress": "127 West 127th Street"
+        }, {
+            "lat": "40.8190256453939",
+            "lon": "-73.9448681362397",
+            "name": "Grace Congregational Baptist Church",
+            "address": "310 W 139TH ST New York NY ",
+            "origAddress": "310 West 139th Street"
+        }, {
+            "lat": "40.8215326572652",
+            "lon": "-73.9464830279892",
+            "name": "St. James Church",
+            "address": "409 W 141ST ST New York NY ",
+            "origAddress": "409 West 141st Street"
+        }, {
+            "lat": "40.8119642222478",
+            "lon": "-73.9625130600971",
+            "name": "Riverside Church",
+            "address": "91 CLAREMONT AVE New York NY ",
+            "origAddress": "91 Claremont Avenue"
+        }, {
+            "lat": "40.8255",
+            "lon": "-73.9472",
+            "name": "Upper Manhattan Mental Health Center",
+            "address": "1727 AMSTERDAM AVE New York NY ",
+            "origAddress": "1727 Amsterdam Avenue"
+        }, {
+            "lat": "40.8232200234845",
+            "lon": "-73.9485449135295",
+            "name": "Our Lady of Lourdes Church",
+            "address": "469 W 142ND ST New York NY ",
+            "origAddress": "469 West 142nd Street"
+        }, {
+            "lat": "40.812",
+            "lon": "-73.9625",
+            "name": "Riverside Church",
+            "address": "91 CLAREMONT AVE New York NY ",
+            "origAddress": "91 Claremont Avenue"
+        }, {
+            "lat": "40.8136938017217",
+            "lon": "-73.9455988432903",
+            "name": "St. Aloysius School",
+            "address": "219 W 132ND ST New York NY ",
+            "origAddress": "219 West 132nd Street"
+        }, {
+            "lat": "40.811646918986",
+            "lon": "-73.9465692736586",
+            "name": "Salem United Methodist Church Community Center",
+            "address": "211 W 129TH ST New York NY ",
+            "origAddress": "211 West 129th Street"
+        }, {
+            "lat": "40.8238859925299",
+            "lon": "-73.9462723904462",
+            "name": "Convent Baptist Church Education Building",
+            "address": "425 W 144TH ST New York NY ",
+            "origAddress": "425 West 144th Street"
+        }, {
+            "lat": "40.8146053686072",
+            "lon": "-73.9443570754889",
+            "name": "St. Phillip's Church",
+            "address": "204 W 134TH ST New York NY ",
+            "origAddress": "204 West 134th Street"
+        }, {
+            "lat": "40.8143540280369",
+            "lon": "-73.9403080272408",
+            "name": "Harlem Hospital King Pavilion",
+            "address": "506 LENOX AVE New York NY ",
+            "origAddress": "506 Lenox Avenue"
+        }, {
+            "lat": "40.8255",
+            "lon": "-73.9472",
+            "name": "Council Center for Problems of Living",
+            "address": "1727 AMSTERDAM AVE New York NY ",
+            "origAddress": "1727 Amsterdam Avenue"
+        }, {
+            "lat": "40.8295984557205",
+            "lon": "-73.9446555334471",
+            "name": "",
+            "address": "1854 AMSTERDAM AVE New York NY ",
+            "origAddress": "1854 Amsterdam Avenue"
+        }, {
+            "lat": "40.8232200234845",
+            "lon": "-73.9485449135295",
+            "name": "Our Lady of Lourdes Church",
+            "address": "469 W 142ND ST New York NY ",
+            "origAddress": "469 West 142nd Street"
+        }, {
+            "lat": "40.6639307188879",
+            "lon": "-73.9382749875207",
+            "name": "Metropolitan AME Church",
+            "address": "5866 W 135TH ST New York NY ",
+            "origAddress": "58-66 West 135th Street"
+        }, {
+            "lat": "40.8059276652577",
+            "lon": "-73.9408673127926",
+            "name": "Harlem Children's Zone Admin. Offices",
+            "address": "35 E 125 ST New York NY ",
+            "origAddress": "35 East 125 Street"
+        }, {
+            "lat": "40.7984929663362",
+            "lon": "-73.9389774473402",
+            "name": "Peter Jay Sharpe Building",
+            "address": "223 E 117TH ST New York NY ",
+            "origAddress": "223 East 117th Street"
+        }, {
+            "lat": "40.7926447124665",
+            "lon": "-73.940850658861",
+            "name": "",
+            "address": "2126 2ND AVE New York NY ",
+            "origAddress": "2126 2nd Avenue"
+        }, {
+            "lat": "40.8021918133913",
+            "lon": "-73.9443165073746",
+            "name": "Veterans Residence",
+            "address": "22 E 119TH ST New York NY ",
+            "origAddress": "22 East 119th Street"
+        }, {
+            "lat": "40.8417041867874",
+            "lon": "-73.9409996840446",
+            "name": "Columbia Presbyterian Hospital",
+            "address": "701 W 168TH ST New York NY ",
+            "origAddress": "701 West 168th Street"
+        }, {
+            "lat": "40.8490796467369",
+            "lon": "-73.9373313893221",
+            "name": "Holy Rood Church",
+            "address": "715 W 179TH ST New York NY ",
+            "origAddress": "715 West 179th Street"
+        }, {
+            "lat": "40.8490796467369",
+            "lon": "-73.9373313893221",
+            "name": "Holy Rood Church",
+            "address": "715 W 179TH ST New York NY ",
+            "origAddress": "715 West 179th Street"
+        }, {
+            "lat": "40.8620966104922",
+            "lon": "-73.9190004613749",
+            "name": "St. Jude's School",
+            "address": "431 W 204TH ST New York NY ",
+            "origAddress": "431 West 204th Street"
+        }, {
+            "lat": "40.8320961144213",
+            "lon": "-73.944465684352",
+            "name": "Church of the Intercession",
+            "address": "550 W 155TH ST New York NY ",
+            "origAddress": "550 West 155th Street"
+        }, {
+            "lat": "40.8330065334804",
+            "lon": "-73.9440819529521",
+            "name": "Casita Esperanza",
+            "address": "557 W 156TH ST New York NY ",
+            "origAddress": "557 West 156th Street"
+        }, {
+            "lat": "40.8626229492642",
+            "lon": "-73.9263833803336",
+            "name": "",
+            "address": "35 THAYER ST New York NY ",
+            "origAddress": "35 Thayer Street"
+        }, {
+            "lat": "40.8490796467369",
+            "lon": "-73.9373313893221",
+            "name": "Episcopal Holy Rood Church",
+            "address": "715 W 179TH ST New York NY ",
+            "origAddress": "715 West 179th Street"
+        }, {
+            "lat": "40.6639307188879",
+            "lon": "-73.9382749875207",
+            "name": "Church Santa Rosa de Lima",
+            "address": "502 WEST165TH ST New York NY ",
+            "origAddress": "502 West165th Street"
+        }, {
+            "lat": "40.8639",
+            "lon": "-73.9283",
+            "name": "Our Lady Queen of Martyrs",
+            "address": "91 ARDEN ST New York NY ",
+            "origAddress": "91 Arden Street"
+        }, {
+            "lat": "40.8665",
+            "lon": "-73.9265",
+            "name": "Holy Trinity Episcopal Church",
+            "address": "20 CUMMING ST New York NY ",
+            "origAddress": "20 Cumming Street"
+        }, {
+            "lat": "40.8659683152661",
+            "lon": "-73.923146151519",
+            "name": "Mount Washington Presbyterian Church",
+            "address": "84 VERMILYEA AVE New York NY ",
+            "origAddress": "84 Vermilyea Avenue"
+        }, {
+            "lat": "40.8692532379724",
+            "lon": "-73.9206625253877",
+            "name": "Church of the Good Shepherd",
+            "address": "620 ISHAM ST New York NY ",
+            "origAddress": "620 Isham Street"
+        }, {
+            "lat": "40.8342635888105",
+            "lon": "-73.9407982066313",
+            "name": "COATHA Church on the Hill Senior Center",
+            "address": "2005 AMSTERDAM AVE New York NY ",
+            "origAddress": "2005 Amsterdam Avenue"
+        }, {
+            "lat": "40.8560152221363",
+            "lon": "-73.9342776437758",
+            "name": "Our Saviour's Atonement Lutheran Church",
+            "address": "178 BENNETT AVE New York NY ",
+            "origAddress": "178 Bennett Avenue"
+        }, {
+            "lat": "40.8560152221363",
+            "lon": "-73.9342776437758",
+            "name": "Our Saviour's Atonement Church",
+            "address": "178 BENNETT AVE New York NY ",
+            "origAddress": "178 Bennett Avenue"
+        }, {
+            "lat": "40.8639",
+            "lon": "-73.9283",
+            "name": "Our Lady Queen of Martyrs",
+            "address": "91 ARDEN ST New York NY ",
+            "origAddress": "91 Arden Street"
+        }, {
+            "lat": "40.8665",
+            "lon": "-73.9265",
+            "name": "Holy Trinity Church",
+            "address": "20 CUMMINGS ST New York NY ",
+            "origAddress": "20 Cummings Street"
+        }, {
+            "lat": "40.8490796467369",
+            "lon": "-73.9373313893221",
+            "name": "Holy Rood Church",
+            "address": "715 W 179TH ST New York NY ",
+            "origAddress": "715 West 179th Street"
+        }, {
+            "lat": "40.6639307188879",
+            "lon": "-73.9382749875207",
+            "name": "Cornerstone Center",
+            "address": "189TH STREET BENNETT AVE New York NY ",
+            "origAddress": "189th Street & Bennett Avenue"
+        }, {
+            "lat": "40.8560152221363",
+            "lon": "-73.9342776437758",
+            "name": "The Corner Stone Center",
+            "address": "178 BENNETT AVE New York NY ",
+            "origAddress": "178 Bennett Avenue"
+        }, {
+            "lat": "40.856",
+            "lon": "-73.9343",
+            "name": "Cornerstone Center",
+            "address": "178 BENNETT AVE New York NY ",
+            "origAddress": "178 Bennett Avenue"
+        }]
+
+        var mymap = L.map('mapid').setView([40.734636, -73.994997], 13);
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
+            tileSize: 512,
+            maxZoom: 18,
+            zoomOffset: -1,
+            id: 'mapbox/streets-v11',
+            accessToken: 'pk.eyJ1IjoibWFscGFyc29ucyIsImEiOiJja2k2Y2w1Ym4yam8wMnhxcWtqNjB0NDczIn0.RyKP1V2plcjZxNXTJaN-4A'
+        }).addTo(mymap);
+        for (var i = 0; i < data.length; i++) {
+            L.marker([data[i].lat, data[i].lon]).bindPopup(JSON.stringify(data[i].address)).addTo(mymap);
+        }
+    </script>
 </body>
-<link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
-<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-    crossorigin="">
-</script>
-<script src="../aa.js"></script>
 
 </html>

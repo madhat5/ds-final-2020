@@ -64,7 +64,7 @@ d3.json("/data/sensor-data.json", (data) => {
 
     // Add Y axis
     let y = d3.scaleLinear()
-        .domain([59, 80])
+        .domain([69, 79])
         .range([height, 0]);
     svg.append("g")
         .call(d3.axisLeft(y));
