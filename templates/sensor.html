@@ -10,13 +10,45 @@
 </head>
 
 <body>
+    <div id="sensor-wrapper">
+        <h1>Temperature in our apartment. What is ...?</h1>
+        <div id="sensor-content">
 
-    <div id="chart"></div>
+            <div id="chart"></div>
+        </div>
+        <div id="sensor-sidebar">
+            <div style="width: 100%; ">
+                <div style="width: 450px; float: left;">
+                    <h2>Data: by date, temperature, user guesses (2)</h2>
+                    <p>
+                        In this visualization you'll view my apartment's daily tempoerature guessing game with my roommate, for the year 2020. Factors that we check the before guessing include:
+                    </p>
+                    <ul>
+                        <li><b>People:</b> how many are in the apartment?</li>
+                        <li><b>Windows:</b> are any in the apartment opent?</li>
+                        <li><b>Heat/AC:</b> is it on?</li>
+                        <li><b>Cooking:</b> are we using the kitchen?</li>
+                        <li><b>Shower:</b> has it been used recently?</li>
+                        <li><b>Electronics:</b> tv, video games, etc?</li>
+                        <li><b>Lights:</b> are they on?</li>
+                    </ul>
+                </div>
+                <div style="margin-left: 500px; width: 450px;">
+                    <h2>Input</h2>
+                    <p>
+                       [add inputs for 2 users, button for res (api req to sensor url + save obj (rm1, rm2, actual), send to DB, pull latest from DB, refresh chart)]
+                    </p>
+                    <div id="sensor-legend"></div>
+                </div>
+            </div>
+        </div>
+        <div id="cleared"></div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="../sensorvis.js"></script>
 </body>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-<script src="../sensorvis.js"></script>
 
 </html>

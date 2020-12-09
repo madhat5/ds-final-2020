@@ -9,6 +9,12 @@ let geoData = require('./data/geoData.json');
 // console.log(geoData[30].InputAddress.StreetAddress)
 let zoneData = require('./data/allZones.json');
 // console.log(zoneData[30].address)
+let newGeoData = require('./data/newGeoData.json');
+console.log(newGeoData)
+// $.getJSON("./data/newGeoData.json", (json) => {
+//     console.log(json); // this will show the info it in firebug console
+// });
+
 
 let combinedData = geoData.map((d, i) => {
     return {
@@ -43,8 +49,7 @@ L.tileLayer(API_URL, {
     zoomOffset: -1,
     id: 'mapbox/streets-v11',
     accessToken: API_KEY
-    //'pk.eyJ1Ijoidm9ucmFtc3kiLCJhIjoiY2pveGF1MmxoMjZnazNwbW8ya2dsZTRtNyJ9.mJ1kRVrVnwTFNdoKlQu_Cw'
 }).addTo(mymap);
-for (var i = 0; i < combinedData.length; i++) {
-    L.marker([combinedData[i].lat, combinedData[i].lon]).bindPopup(JSON.stringify(combinedData[i].address)).addTo(mymap);
+for (var i = 0; i < newGeoData.length; i++) {
+    L.marker([newGeoData[i].lat, newGeoData[i].lon]).bindPopup(JSON.stringify(newGeoData[i].address)).addTo(mymap);
 }

@@ -41,6 +41,10 @@ td {
   }
 }
 
+/* ========================================================= */
+/* BLOG */
+/* ========================================================= */
+
 .bubbles:hover {
   stroke-width: 2px;
   stroke: #333;
@@ -51,3 +55,103 @@ td {
   top: 100%;
   left: 0;
 }
+
+#blog-wrapper {
+  margin-left: 15px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+#blog-content {
+  /* float: right; */
+  width: 100%;
+}
+
+#blog-sidebar {
+  /* float: left; */
+  width: 400px;
+  margin-left: 30px;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+#blog-cleared {
+  clear: both;
+}
+
+#blog-wrapper h1 {
+  font-size: 26px;
+  line-height: 31px;
+  font-style: italic;
+}
+
+#blog-wrapper h2 {
+  color: #bfbfbf;
+  font-size: 16px;
+  line-height: 21px;
+  margin-top: 0
+}
+
+#blog-wrapper h3 {
+  color: #1c1c1c;
+  font-size: 14px
+}
+
+#blog-wrapper p {
+  font-size: 13px;
+  line-height: 18px;
+  color: #000;
+}
+
+/* ========================================================= */
+/* SENSOR */
+/* ========================================================= */
+#sensor-wrapper {
+  margin-left: 15px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+#sensor-content {
+  /* float: right; */
+  width: 100%;
+}
+
+#sensor-sidebar {
+  /* float: left; */
+  width: 400px;
+  margin-left: 30px;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+#sensor-cleared {
+  clear: both;
+}
+
+#sensor-wrapper h1 {
+  font-size: 26px;
+  line-height: 31px;
+  font-style: italic;
+}
+
+#sensor-wrapper h2 {
+  color: #bfbfbf;
+  font-size: 16px;
+  line-height: 21px;
+  margin-top: 0
+}
+
+#sensor-wrapper h3 {
+  color: #1c1c1c;
+  font-size: 14px
+}
+
+#sensor-wrapper p {
+  font-size: 13px;
+  line-height: 18px;
+  color: #000;
+}
+
+
+/* ========================================================= */
+/* AA */
+/* ========================================================= */

@@ -37,7 +37,7 @@ let showTooltip = function (d) {
         .style("visibility", "visible")
         .html(
             "date: " + d.date + "<br>" +
-            "time: " + d.time + "<br>" +
+            // "time: " + d.time + "<br>" +
             "weight: " + d.weight + "<br>" +
             "temp: " + d.temp + "<br>" +
             "hrs_slept: " + d.hrs_slept)
@@ -74,6 +74,14 @@ let svg = d3.select("#chart")
     .append("g")
     .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
+
+let svgTwo = d3.select("#blog-legend")
+    .append("svg")
+    .attr("width", (width / 2) + margin.left + margin.right)
+    .attr("height", (height / 2) + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform",
+        "translate(" + -375 + "," + 0 + ")");
 
 //Read the data
 d3.json("/data/blog-data.json", (data) => {
@@ -174,7 +182,7 @@ d3.json("/data/blog-data.json", (data) => {
     let size = 20
     let tempColor = [400, 440, 500]
     let allgroups = ["underslept", "regular", "overslept"]
-    svg.selectAll("myrect")
+    svgTwo.selectAll("myrect")
         .data(allgroups)
         .enter()
         .append("circle")
@@ -198,7 +206,7 @@ d3.json("/data/blog-data.json", (data) => {
         .on("mouseleave", noHighlight)
 
     // Add labels beside legend dots
-    svg.selectAll("mylabels")
+    svgTwo.selectAll("mylabels")
         .data(allgroups)
         .enter()
         .append("text")

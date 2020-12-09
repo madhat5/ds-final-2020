@@ -116,7 +116,7 @@ app.get('/temperature', function(req, res) {
     });
 }); 
 
-app.get('/processblog', function(req, res) {
+app.get('/blog', function(req, res) {
     // AWS DynamoDB credentials
     AWS.config = new AWS.Config();
     AWS.config.region = "us-east-1";
