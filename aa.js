@@ -51,5 +51,5 @@ L.tileLayer(API_URL, {
     accessToken: API_KEY
 }).addTo(mymap);
 for (var i = 0; i < newGeoData.length; i++) {
-    L.marker([newGeoData[i].lat, newGeoData[i].lon]).bindPopup(JSON.stringify(newGeoData[i].address)).addTo(mymap);
+    L.marker([newGeoData[i].lat, newGeoData[i].lon]).bindPopup(JSON.stringify(newGeoData[i].name)).addTo(mymap);
 }

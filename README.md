@@ -16,8 +16,9 @@
 #### Notes:
 
 - ALL
-    - app-server
-    - API endpoints
+    - encode
+    - send/load from db
+    - user inputs
 - AA map
     - finalize sketch (x)
     - double check data build (missed merging of AA + TAMU data?)
@@ -26,6 +27,7 @@
 - Sensor data
     - debug saving data (o)
     - collect data (ox)
+    - popup dates
 
 
 #### Next

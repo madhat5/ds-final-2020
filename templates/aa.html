@@ -12,10 +12,34 @@
 </head>
 
 <body>
-    <div id="mapid"></div>
+
+    <!-- <div id="mapid"></div> -->
+
+    <div id="map-wrapper">
+        <h1>AA: Where are the meetings?</h1>
+        <div id="map-content">
+            <!-- <div id="mapid"></div> -->
+        </div>
+        <div id="map-sidebar">
+            <div style="width: 100%; ">
+                <div style="width: 350px; float: left;">
+                    <h2>Data: by meeting location, and closest other meetings(2-3)</h2>
+                    <p>
+                        In this visualization you'll select a meeting, and view that location along with the other closest meetings.
+                    </p>
+                    <p>
+                        The intended user is one looking for a meeting, but not sure they can go through with it. This gives them an opportunity to walk around/cool off, while still knowing they are in the vicinity of a few other meetings.
+                    </p>
+                </div>
+                <div style="margin-left: 370px; width: 1000px;">
+                    <div id="mapid"></div>
+                </div>
+            </div>
+        </div>
+        <div id="cleared"></div>
+    </div>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script> -->
-
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
         crossorigin=""></script>
