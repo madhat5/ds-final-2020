@@ -6,10 +6,10 @@ const moment = require('moment-timezone');
 const handlebars = require('handlebars');
 var fs = require('fs');
 
-const indexSource = fs.readFileSync("templates/sensor.txt").toString();
-var template = handlebars.compile(indexSource, { strict: true });
+const sensorSource = fs.readFileSync("templates/sensor.txt").toString();
+var sensortemplate = handlebars.compile(sensorSource, { strict: true });
 
-const pbSource = fs.readFileSync("templates/pb.txt").toString();
+const pbSource = fs.readFileSync("templates/blog.txt").toString();
 var pbtemplate = handlebars.compile(pbSource, { strict: true });
 
 // AWS RDS credentials
@@ -109,7 +109,7 @@ app.get('/temperature', function(req, res) {
     client.query(q, (qerr, qres) => {
         if (qerr) { throw qerr }
         else {
-            res.end(template({ sensordata: JSON.stringify(qres.rows)}));
+            res.end(sensortemplate({ sensordata: JSON.stringify(qres.rows)}));
             client.end();
             console.log('1) responded to request for sensor graph');
         }

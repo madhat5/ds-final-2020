@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Blog</title>
+</head>
+
+<body>
+    <div id="blog-wrapper">
+        <h1>David's Daily Numbers</h1>
+        <div id="blog-content">
+
+            <div id="chart"></div>
+        </div>
+        <div id="blog-sidebar">
+            <div style="width: 100%; ">
+                <div style="width: 450px; float: left;">
+                    <h2>Data: by date, temperature, weight, hours of sleep</h2>
+                    <p>
+                        In this visualization you'll view my daily log for the year 2020. Details for the data are:
+                    </p>
+                    <ul>
+                        <li>Date, range: 4/2020 - 11/2020</li>
+                        <li>Temperature, range: 94 - 100 (F)</li>
+                        <li>Weight, range: 150 - 170 (lbs)</li>
+                        <li>Hours of sleep:
+                            <ul>
+                                <li>< 7hrs: <b>underslept</b></li>
+                                <li>> 7hrs & < 8hrs: <b>regular</b></li>
+                                <li>> 8hrs: <b>overslept</b></li>
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div style="margin-left: 500px; width: 450px;">
+                    <h2>Legend (hours of sleep)</h2>
+                    <p>
+                        Circles on the chart can be hovered over to view item details. Circles in the legend can be hovered over to focus on the selected group.
+                    </p>
+                    <div id="blog-legend"></div>
+                </div>
+            </div>
+        </div>
+        <div id="cleared"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="js/blogvis.js"></script>
+</body>
+
+</html>
