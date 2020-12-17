@@ -1,6 +1,6 @@
 # data-structures final project
 
-Final project prototype links (in case I'm not able to complete the assignment 100%)
+Final project prototype links
 
 Assign. 10-3 Time sensor:
 https://madhat5.github.io/ds-final-2020/base_protype/sensor.html
@@ -15,7 +15,27 @@ Repo:
 https://github.com/madhat5/ds-final-2020
 
 
-#### Next
+#### Overview
+The goal of this project was to create 3 different apps:
+    - a blog visualization, where a user inputs a number of variables (eg weight, hours of sleep, etc)
+    - a temperature sensor guessing game, in which roommates guess the temperature based on set criteria (eg windows, cooking, etc), which is then displayed on a chart as 3 continuous data points
+    - an alcoholics anonymous map app, displaying the nearest 3 or more (user input) meetings in a given area (user input)
+
+The data was loaded to online databses (RDS and Dynamo); a request is then sent to retrieve and display the data.
+
+Status:
+    - process blog: 
+        - data was retrieved from Dynamo, however issues loading to HTML through handlebars
+        - is only working withstatic data, 
+        - user inputs not yet built in
+    - the temperature: 
+        - is only displaying static data, 
+        - user inputs not yet built in
+    - aa map:
+        - is only displaying static data, 
+            - user inputs not yet built in
+
+#### Next Steps
 - ALL
     - encode (ox)
     - `send/load from db (ox)`
@@ -69,8 +89,5 @@ https://github.com/madhat5/ds-final-2020
 - Submission
     - github repo
     - screen cast guided tour
-    - include:
-        - intro
-        - overview
-        - next steps
+    - 
 - removing all form AWS
