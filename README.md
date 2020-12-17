@@ -23,7 +23,7 @@ The goal of this project was to create 3 different apps:
 
 The data was loaded to online databses (RDS and Dynamo); a request is then sent to retrieve and display the data.
 
-Status:
+- Status:
     - process blog: 
         - data was retrieved from Dynamo, however issues loading to HTML through handlebars
         - is only working withstatic data, 
