@@ -1,8 +1,48 @@
 # data-structures final project
 
-[temp sketch](url)
-[aa sketch](url)
-[blog sketch](url)
+Final project prototype links (in case I'm not able to complete the assignment 100%)
+
+Assign. 10-3 Time sensor:
+https://madhat5.github.io/ds-final-2020/base_protype/sensor.html
+
+Assign. 10-2 Process blog:
+https://madhat5.github.io/ds-final-2020/base_protype/blog.html
+
+Assign. 10-2 AA map:
+https://madhat5.github.io/ds-final-2020/base_protype/aa.html
+
+Repo:
+https://github.com/madhat5/ds-final-2020
+
+
+#### Next
+- ALL
+    - encode (ox)
+    - `send/load from db (ox)`
+        - debug password issue
+        - push data to db's 
+    - `get app.js working on aws (load files to AWS) (ox)`
+        - move js to public folder?
+    - push working pages to aws/github
+    - user inputs
+- Blog
+    - get date working on x axis (ox)
+    - add legend (x)
+    - serve db data instead of json
+    - encode (title, summary, legend, etc) (ox)
+- Sensor
+    - viz w/ json data first (x)
+    - get date working on x axis
+    - serve db data instead of json
+    - get user inputs + sensor api res
+        - send {} to DB
+    - encode (title, summary, legend, etc) (ox)
+    - change visual?
+        - box plot chart line chart to show error diff btw roommates (https://www.d3-graph-gallery.com/boxplot.html)
+- Map
+    - viz w/ json data first (x)
+    - serve db data instead of json
+    - encode (title, summary, legend, etc) (ox)
 
 #### Summary: 
 
@@ -25,30 +65,12 @@
     - collect data (ox)
     - encode (popup dates, etc)
 
-#### Next
-- ALL
-    - encode (ox)
-    - `send/load from db (ox)`
-        - debug password issue
-        - push data to db's 
-    - `get app.js working on aws (load files to AWS) (ox)`
-        - move js to public folder?
-    - user inputs
-- Blog
-    - get date working on x axis (ox)
-    - add legend (x)
-    - serve db data instead of json
-    - encode (title, summary, legend, etc) (ox)
-- Sensor
-    - viz w/ json data first (x)
-    - get date working on x axis
-    - serve db data instead of json
-    - get user inputs + sensor api res
-        - send {} to DB
-    - encode (title, summary, legend, etc) (ox)
-    - change visual?
-        - box plot chart line chart to show error diff btw roommates (https://www.d3-graph-gallery.com/boxplot.html)
-- Map
-    - viz w/ json data first (x)
-    - serve db data instead of json
-    - encode (title, summary, legend, etc) (ox)
+
+- Submission
+    - github repo
+    - screen cast guided tour
+    - include:
+        - intro
+        - overview
+        - next steps
+- removing all form AWS

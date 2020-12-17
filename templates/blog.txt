@@ -24,10 +24,10 @@
                         In this visualization you'll view my daily log for the year 2020. Details for the data are:
                     </p>
                     <ul>
-                        <li>Date, range: 4/2020 - 11/2020</li>
-                        <li>Temperature, range: 94 - 100 (F)</li>
-                        <li>Weight, range: 150 - 170 (lbs)</li>
-                        <li>Hours of sleep:
+                        <li>x: Date, range: 4/2020 - 11/2020</li>
+                        <li>y: Temperature, range: 94 - 100 (F)</li>
+                        <li>radius: Weight, range: 150 - 170 (lbs)</li>
+                        <li>color: Hours of sleep:
                             <ul>
                                 <li>
                                     < 7hrs: <b>underslept</b>
@@ -57,7 +57,2303 @@
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script>
         // console.log('sim sim salabim')
-        var data = {{{pbdata}}} ; 
+        var blogData = {{{pbdata}}};
+        console.log(blogData);
+        
+        if ( blogData.length < 1 ){
+            blogData = [{
+        "date": "04/11/2020",
+        "time": "09:08",
+        "weight": 161.4,
+        "temp": 97.4,
+        "sleep": "00:30",
+        "awake": "08:30",
+        "hoursSlept": "8:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "04/12/2020",
+        "time": "08:47",
+        "weight": 162.2,
+        "temp": 96.5,
+        "sleep": "02:30",
+        "awake": "08:15",
+        "hoursSlept": "5:45",
+        "dayRank": "4"
+    },
+    {
+        "date": "04/13/2020",
+        "time": "08:06",
+        "weight": 162.8,
+        "temp": 96.7,
+        "sleep": "23:45",
+        "awake": "08:00",
+        "hoursSlept": "8:15",
+        "dayRank": "5"
+    },
+    {
+        "date": "04/14/2020",
+        "time": "07:07",
+        "weight": 162.4,
+        "temp": 96.2,
+        "sleep": "00:20",
+        "awake": "07:00",
+        "hoursSlept": "6:40",
+        "dayRank": "4"
+    },
+    {
+        "date": "04/15/2020",
+        "time": "06:35",
+        "weight": 162,
+        "temp": 96.1,
+        "sleep": "23:30",
+        "awake": "06:30",
+        "hoursSlept": "7:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "04/16/2020",
+        "time": "06:50",
+        "weight": 162.4,
+        "temp": 96.4,
+        "sleep": "00:30",
+        "awake": "06:45",
+        "hoursSlept": "6:15",
+        "dayRank": "6"
+    },
+    {
+        "date": "04/17/2020",
+        "time": "07:12",
+        "weight": 164.4,
+        "temp": 96.3,
+        "sleep": "23:30",
+        "awake": "07:00",
+        "hoursSlept": "7:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "04/18/2020",
+        "time": "08:20",
+        "weight": 163.6,
+        "temp": 96.3,
+        "sleep": "00:30",
+        "awake": "07:45",
+        "hoursSlept": "7:15",
+        "dayRank": "7"
+    },
+    {
+        "date": "04/19/2020",
+        "time": "08:18",
+        "weight": 163,
+        "temp": 96.2,
+        "sleep": "00:45",
+        "awake": "07:45",
+        "hoursSlept": "7:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "04/20/2020",
+        "time": "07:15",
+        "weight": 161.4,
+        "temp": 95.3,
+        "sleep": "23:45",
+        "awake": "07:00",
+        "hoursSlept": "7:15",
+        "dayRank": "6"
+    },
+    {
+        "date": "04/21/2020",
+        "time": "07:10",
+        "weight": 163,
+        "temp": 95.2,
+        "sleep": "23:45",
+        "awake": "07:00",
+        "hoursSlept": "7:15",
+        "dayRank": "5"
+    },
+    {
+        "date": "04/22/2020",
+        "time": "06:50",
+        "weight": 162.6,
+        "temp": 95.6,
+        "sleep": "23:00",
+        "awake": "06:30",
+        "hoursSlept": "7:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "04/23/2020",
+        "time": "06:50",
+        "weight": 162.4,
+        "temp": 95.1,
+        "sleep": "00:00",
+        "awake": "06:45",
+        "hoursSlept": "6:45",
+        "dayRank": "6"
+    },
+    {
+        "date": "04/24/2020",
+        "time": "07:00",
+        "weight": 163.8,
+        "temp": 95,
+        "sleep": "23:00",
+        "awake": "06:45",
+        "hoursSlept": "7:45",
+        "dayRank": "7"
+    },
+    {
+        "date": "04/25/2020",
+        "time": "09:31",
+        "weight": 161.6,
+        "temp": 95,
+        "sleep": "01:30",
+        "awake": "07:45",
+        "hoursSlept": "6:15",
+        "dayRank": "5"
+    },
+    {
+        "date": "04/26/2020",
+        "time": "09:34",
+        "weight": 160.8,
+        "temp": 97.1,
+        "sleep": "00:00",
+        "awake": "08:45",
+        "hoursSlept": "8:45",
+        "dayRank": "6"
+    },
+    {
+        "date": "04/27/2020",
+        "time": "08:20",
+        "weight": 160.8,
+        "temp": 96.5,
+        "sleep": "01:00",
+        "awake": "08:00",
+        "hoursSlept": "7:00",
+        "dayRank": "5"
+    },
+    {
+        "date": "04/28/2020",
+        "time": "08:13",
+        "weight": 163.4,
+        "temp": 96,
+        "sleep": "00:30",
+        "awake": "08:00",
+        "hoursSlept": "7:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "04/29/2020",
+        "time": "07:10",
+        "weight": 162.2,
+        "temp": 96.2,
+        "sleep": "23:15",
+        "awake": "07:00",
+        "hoursSlept": "7:45",
+        "dayRank": "7"
+    },
+    {
+        "date": "04/30/2020",
+        "time": "07:10",
+        "weight": 162.6,
+        "temp": 96.2,
+        "sleep": "00:00",
+        "awake": "07:00",
+        "hoursSlept": "7:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "05/01/2020",
+        "time": "08:00",
+        "weight": 162.4,
+        "temp": 97.4,
+        "sleep": "23:30",
+        "awake": "07:00",
+        "hoursSlept": "7:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "05/02/2020",
+        "time": "15:35",
+        "weight": 162,
+        "temp": 98,
+        "sleep": "02:00",
+        "awake": "09:00",
+        "hoursSlept": "7:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "05/03/2020",
+        "time": "09:30",
+        "weight": 162.8,
+        "temp": 97.2,
+        "sleep": "00:00",
+        "awake": "09:00",
+        "hoursSlept": "9:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "05/04/2020",
+        "time": "07:30",
+        "weight": 162.8,
+        "temp": 97.2,
+        "sleep": "01:00",
+        "awake": "07:15",
+        "hoursSlept": "6:15",
+        "dayRank": "7"
+    },
+    {
+        "date": "05/05/2020",
+        "time": "07:35",
+        "weight": 164.4,
+        "temp": 97.5,
+        "sleep": "00:00",
+        "awake": "07:15",
+        "hoursSlept": "7:15",
+        "dayRank": "7"
+    },
+    {
+        "date": "05/06/2020",
+        "time": "07:35",
+        "weight": 164.6,
+        "temp": 97.4,
+        "sleep": "23:00",
+        "awake": "07:30",
+        "hoursSlept": "8:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "05/07/2020",
+        "time": "07:14",
+        "weight": 165,
+        "temp": 96.7,
+        "sleep": "23:00",
+        "awake": "06:40",
+        "hoursSlept": "7:40",
+        "dayRank": "8"
+    },
+    {
+        "date": "05/08/2020",
+        "time": "07:40",
+        "weight": 164.6,
+        "temp": 96.6,
+        "sleep": "23:30",
+        "awake": "07:00",
+        "hoursSlept": "7:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "05/09/2020",
+        "time": "08:20",
+        "weight": 164.2,
+        "temp": 96.1,
+        "sleep": "23:00",
+        "awake": "08:00",
+        "hoursSlept": "9:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "05/10/2020",
+        "time": "08:30",
+        "weight": 164.2,
+        "temp": 97.2,
+        "sleep": "00:00",
+        "awake": "08:00",
+        "hoursSlept": "8:00",
+        "dayRank": "8"
+    },
+    {
+        "date": "05/11/2020",
+        "time": "07:40",
+        "weight": 166,
+        "temp": 96.7,
+        "sleep": "01:00",
+        "awake": "07:00",
+        "hoursSlept": "6:00",
+        "dayRank": "5"
+    },
+    {
+        "date": "05/12/2020",
+        "time": "07:15",
+        "weight": 165.8,
+        "temp": 96.5,
+        "sleep": "23:00",
+        "awake": "07:00",
+        "hoursSlept": "8:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "05/13/2020",
+        "time": "06:25",
+        "weight": 166,
+        "temp": 96.5,
+        "sleep": "23:00",
+        "awake": "06:15",
+        "hoursSlept": "7:15",
+        "dayRank": "9"
+    },
+    {
+        "date": "05/14/2020",
+        "time": "08:15",
+        "weight": 163.6,
+        "temp": 96.4,
+        "sleep": "23:30",
+        "awake": "07:30",
+        "hoursSlept": "8:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "05/15/2020",
+        "time": "08:00",
+        "weight": 165.2,
+        "temp": 96.7,
+        "sleep": "00:00",
+        "awake": "07:30",
+        "hoursSlept": "7:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "05/16/2020",
+        "time": "08:15",
+        "weight": 163.2,
+        "temp": 98.4,
+        "sleep": "00:00",
+        "awake": "07:30",
+        "hoursSlept": "7:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "05/17/2020",
+        "time": "06:20",
+        "weight": 162.2,
+        "temp": 98.1,
+        "sleep": "22:30",
+        "awake": "06:10",
+        "hoursSlept": "7:40",
+        "dayRank": "8"
+    },
+    {
+        "date": "05/18/2020",
+        "time": "07:54",
+        "weight": 165.8,
+        "temp": 98.2,
+        "sleep": "22:30",
+        "awake": "07:20",
+        "hoursSlept": "8:50",
+        "dayRank": "6"
+    },
+    {
+        "date": "05/19/2020",
+        "time": "07:32",
+        "weight": 166.4,
+        "temp": 98.4,
+        "sleep": "20:30",
+        "awake": "07:00",
+        "hoursSlept": "10:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "05/20/2020",
+        "time": "09:39",
+        "weight": 166.2,
+        "temp": 97.6,
+        "sleep": "23:00",
+        "awake": "07:00",
+        "hoursSlept": "8:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "05/21/2020",
+        "time": "18:05",
+        "weight": 167.6,
+        "temp": 98.5,
+        "sleep": "00:00",
+        "awake": "07:30",
+        "hoursSlept": "7:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "05/22/2020",
+        "time": "09:03",
+        "weight": 166,
+        "temp": 97.9,
+        "sleep": "00:00",
+        "awake": "08:00",
+        "hoursSlept": "8:00",
+        "dayRank": "5"
+    },
+    {
+        "date": "05/23/2020",
+        "time": "10:24",
+        "weight": 166,
+        "temp": 98.3,
+        "sleep": "00:00",
+        "awake": "08:30",
+        "hoursSlept": "8:30",
+        "dayRank": "4"
+    },
+    {
+        "date": "05/24/2020",
+        "time": "06:23",
+        "weight": 166.2,
+        "temp": 97.9,
+        "sleep": "23:00",
+        "awake": "06:15",
+        "hoursSlept": "7:15",
+        "dayRank": "7"
+    },
+    {
+        "date": "05/25/2020",
+        "time": "06:38",
+        "weight": 166.2,
+        "temp": 97.9,
+        "sleep": "00:30",
+        "awake": "06:30",
+        "hoursSlept": "6:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "05/26/2020",
+        "time": "07:15",
+        "weight": 159.6,
+        "temp": 97.9,
+        "sleep": "23:00",
+        "awake": "07:00",
+        "hoursSlept": "8:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "05/27/2020",
+        "time": "06:18",
+        "weight": 158.8,
+        "temp": 98.3,
+        "sleep": "23:00",
+        "awake": "06:10",
+        "hoursSlept": "7:10",
+        "dayRank": "8"
+    },
+    {
+        "date": "05/28/2020",
+        "time": "07:25",
+        "weight": 157.8,
+        "temp": 98.3,
+        "sleep": "21:30",
+        "awake": "07:00",
+        "hoursSlept": "9:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "05/29/2020",
+        "time": "06:16",
+        "weight": 158.8,
+        "temp": 98.2,
+        "sleep": "23:00",
+        "awake": "06:10",
+        "hoursSlept": "7:10",
+        "dayRank": "8"
+    },
+    {
+        "date": "05/30/2020",
+        "time": "09:44",
+        "weight": 158.8,
+        "temp": 98.2,
+        "sleep": "01:00",
+        "awake": "09:00",
+        "hoursSlept": "8:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "05/31/2020",
+        "time": "07:23",
+        "weight": 161,
+        "temp": 97.9,
+        "sleep": "00:00",
+        "awake": "07:15",
+        "hoursSlept": "7:15",
+        "dayRank": "7"
+    },
+    {
+        "date": "06/01/2020",
+        "time": "07:10",
+        "weight": 160.8,
+        "temp": 97.3,
+        "sleep": "01:00",
+        "awake": "07:00",
+        "hoursSlept": "6:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "06/02/2020",
+        "time": "06:25",
+        "weight": 161,
+        "temp": 97.4,
+        "sleep": "23:00",
+        "awake": "06:10",
+        "hoursSlept": "7:10",
+        "dayRank": "10"
+    },
+    {
+        "date": "06/03/2020",
+        "time": "06:36",
+        "weight": 159.8,
+        "temp": 97.5,
+        "sleep": "23:20",
+        "awake": "06:30",
+        "hoursSlept": "7:10",
+        "dayRank": "8"
+    },
+    {
+        "date": "06/04/2020",
+        "time": "07:42",
+        "weight": 159.6,
+        "temp": 97.9,
+        "sleep": "23:30",
+        "awake": "07:00",
+        "hoursSlept": "7:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "06/05/2020",
+        "time": "06:30",
+        "weight": 158,
+        "temp": 98,
+        "sleep": "23:00",
+        "awake": "06:20",
+        "hoursSlept": "7:20",
+        "dayRank": "8"
+    },
+    {
+        "date": "06/06/2020",
+        "time": "07:21",
+        "weight": 157.8,
+        "temp": 97.6,
+        "sleep": "22:30",
+        "awake": "06:30",
+        "hoursSlept": "8:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "06/07/2020",
+        "time": "06:48",
+        "weight": 156.8,
+        "temp": 98.1,
+        "sleep": "01:30",
+        "awake": "06:40",
+        "hoursSlept": "5:10",
+        "dayRank": "8"
+    },
+    {
+        "date": "06/08/2020",
+        "time": "07:49",
+        "weight": 158.6,
+        "temp": 98.1,
+        "sleep": "23:30",
+        "awake": "07:30",
+        "hoursSlept": "8:00",
+        "dayRank": "5"
+    },
+    {
+        "date": "06/09/2020",
+        "time": "06:56",
+        "weight": 157.8,
+        "temp": 97.2,
+        "sleep": "23:30",
+        "awake": "06:30",
+        "hoursSlept": "7:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "06/10/2020",
+        "time": "06:08",
+        "weight": 159.4,
+        "temp": 97.6,
+        "sleep": "23:00",
+        "awake": "06:00",
+        "hoursSlept": "7:00",
+        "dayRank": "8"
+    },
+    {
+        "date": "06/11/2020",
+        "time": "07:16",
+        "weight": 158,
+        "temp": 98.2,
+        "sleep": "23:00",
+        "awake": "07:00",
+        "hoursSlept": "8:00",
+        "dayRank": "8"
+    },
+    {
+        "date": "06/12/2020",
+        "time": "07:17",
+        "weight": 158.8,
+        "temp": 97.5,
+        "sleep": "00:00",
+        "awake": "07:00",
+        "hoursSlept": "7:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "06/13/2020",
+        "time": "08:35",
+        "weight": 159.8,
+        "temp": 98.5,
+        "sleep": "01:00",
+        "awake": "08:00",
+        "hoursSlept": "7:00",
+        "dayRank": "8"
+    },
+    {
+        "date": "06/14/2020",
+        "time": "07:20",
+        "weight": 158.8,
+        "temp": 98.2,
+        "sleep": "03:45",
+        "awake": "07:20",
+        "hoursSlept": "3:35",
+        "dayRank": "7"
+    },
+    {
+        "date": "06/15/2020",
+        "time": "08:10",
+        "weight": 158.4,
+        "temp": 97.9,
+        "sleep": "23:00",
+        "awake": "08:00",
+        "hoursSlept": "9:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "06/16/2020",
+        "time": "06:14",
+        "weight": 159.2,
+        "temp": 98.1,
+        "sleep": "22:30",
+        "awake": "06:00",
+        "hoursSlept": "7:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "06/17/2020",
+        "time": "07:12",
+        "weight": 158.2,
+        "temp": 97.6,
+        "sleep": "00:00",
+        "awake": "06:30",
+        "hoursSlept": "6:30",
+        "dayRank": "5"
+    },
+    {
+        "date": "06/18/2020",
+        "time": "07:51",
+        "weight": 158.8,
+        "temp": 97.3,
+        "sleep": "23:45",
+        "awake": "07:30",
+        "hoursSlept": "7:45",
+        "dayRank": "5"
+    },
+    {
+        "date": "06/19/2020",
+        "time": "07:22",
+        "weight": 157.6,
+        "temp": 98,
+        "sleep": "23:30",
+        "awake": "07:00",
+        "hoursSlept": "7:30",
+        "dayRank": "5"
+    },
+    {
+        "date": "06/20/2020",
+        "time": "07:20",
+        "weight": 157.2,
+        "temp": 98.1,
+        "sleep": "00:00",
+        "awake": "07:15",
+        "hoursSlept": "7:15",
+        "dayRank": "6"
+    },
+    {
+        "date": "06/21/2020",
+        "time": "06:12",
+        "weight": 158.2,
+        "temp": 97.5,
+        "sleep": "22:00",
+        "awake": "05:00",
+        "hoursSlept": "7:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "06/22/2020",
+        "time": "06:51",
+        "weight": 159.2,
+        "temp": 98.1,
+        "sleep": "22:00",
+        "awake": "06:30",
+        "hoursSlept": "8:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "06/23/2020",
+        "time": "06:03",
+        "weight": 159.8,
+        "temp": 98.2,
+        "sleep": "23:00",
+        "awake": "06:00",
+        "hoursSlept": "7:00",
+        "dayRank": "9"
+    },
+    {
+        "date": "06/24/2020",
+        "time": "07:21",
+        "weight": 159.8,
+        "temp": 98.3,
+        "sleep": "23:40",
+        "awake": "06:40",
+        "hoursSlept": "7:00",
+        "dayRank": "8"
+    },
+    {
+        "date": "06/25/2020",
+        "time": "06:36",
+        "weight": 160.2,
+        "temp": 98,
+        "sleep": "22:00",
+        "awake": "06:30",
+        "hoursSlept": "8:30",
+        "dayRank": "8"
+    },
+    {
+        "date": "06/26/2020",
+        "time": "06:41",
+        "weight": 160.4,
+        "temp": 97.6,
+        "sleep": "22:00",
+        "awake": "06:40",
+        "hoursSlept": "8:40",
+        "dayRank": "7"
+    },
+    {
+        "date": "06/27/2020",
+        "time": "07:13",
+        "weight": 158.2,
+        "temp": 98,
+        "sleep": "23:00",
+        "awake": "07:00",
+        "hoursSlept": "8:00",
+        "dayRank": "9"
+    },
+    {
+        "date": "06/28/2020",
+        "time": "09:15",
+        "weight": 158,
+        "temp": 98.4,
+        "sleep": "03:00",
+        "awake": "09:00",
+        "hoursSlept": "6:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "06/29/2020",
+        "time": "07:57",
+        "weight": 158.4,
+        "temp": 98.1,
+        "sleep": "00:00",
+        "awake": "07:15",
+        "hoursSlept": "7:15",
+        "dayRank": "8"
+    },
+    {
+        "date": "06/30/2020",
+        "time": "07:52",
+        "weight": 159.4,
+        "temp": 98.4,
+        "sleep": "23:45",
+        "awake": "07:15",
+        "hoursSlept": "7:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "07/01/2020",
+        "time": "07:15",
+        "weight": 161.8,
+        "temp": 97.6,
+        "sleep": "23:30",
+        "awake": "07:15",
+        "hoursSlept": "7:45",
+        "dayRank": "7"
+    },
+    {
+        "date": "07/02/2020",
+        "time": "08:27",
+        "weight": 163.2,
+        "temp": 97.5,
+        "sleep": "23:30",
+        "awake": "07:30",
+        "hoursSlept": "8:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "07/03/2020",
+        "time": "08:21",
+        "weight": 164.2,
+        "temp": 98.2,
+        "sleep": "23:30",
+        "awake": "07:30",
+        "hoursSlept": "8:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "07/04/2020",
+        "time": "07:43",
+        "weight": 161.6,
+        "temp": 98.2,
+        "sleep": "00:00",
+        "awake": "07:20",
+        "hoursSlept": "7:20",
+        "dayRank": "7"
+    },
+    {
+        "date": "07/05/2020",
+        "time": "07:03",
+        "weight": 162.4,
+        "temp": 98,
+        "sleep": "19:30",
+        "awake": "07:00",
+        "hoursSlept": "11:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "07/06/2020",
+        "time": "08:17",
+        "weight": 164,
+        "temp": 98.2,
+        "sleep": "00:00",
+        "awake": "07:15",
+        "hoursSlept": "7:15",
+        "dayRank": "8"
+    },
+    {
+        "date": "07/07/2020",
+        "time": "07:52",
+        "weight": 162.4,
+        "temp": 97.9,
+        "sleep": "00:00",
+        "awake": "07:30",
+        "hoursSlept": "7:30",
+        "dayRank": "8"
+    },
+    {
+        "date": "07/08/2020",
+        "time": "08:22",
+        "weight": 160.2,
+        "temp": 97.3,
+        "sleep": "00:00",
+        "awake": "08:00",
+        "hoursSlept": "8:00",
+        "dayRank": "8"
+    },
+    {
+        "date": "07/09/2020",
+        "time": "08:57",
+        "weight": 159.6,
+        "temp": 97.5,
+        "sleep": "02:00",
+        "awake": "08:30",
+        "hoursSlept": "6:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "07/10/2020",
+        "time": "07:58",
+        "weight": 159.8,
+        "temp": 98.6,
+        "sleep": "00:30",
+        "awake": "07:30",
+        "hoursSlept": "7:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "07/13/2020",
+        "time": "07:58",
+        "weight": 160.2,
+        "temp": 97.8,
+        "sleep": "00:00",
+        "awake": "07:30",
+        "hoursSlept": "7:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "07/14/2020",
+        "time": "08:00",
+        "weight": 159.2,
+        "temp": 98.4,
+        "sleep": "00:00",
+        "awake": "07:30",
+        "hoursSlept": "7:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "07/15/2020",
+        "time": "07:56",
+        "weight": 161.8,
+        "temp": 98.1,
+        "sleep": "23:00",
+        "awake": "07:30",
+        "hoursSlept": "8:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "07/16/2020",
+        "time": "07:15",
+        "weight": 161.8,
+        "temp": 98.2,
+        "sleep": "22:00",
+        "awake": "07:00",
+        "hoursSlept": "9:00",
+        "dayRank": "8"
+    },
+    {
+        "date": "07/17/2020",
+        "time": "07:30",
+        "weight": 160.4,
+        "temp": 98,
+        "sleep": "22:30",
+        "awake": "07:05",
+        "hoursSlept": "8:35",
+        "dayRank": "9"
+    },
+    {
+        "date": "07/18/2020",
+        "time": "07:30",
+        "weight": 161.4,
+        "temp": 97.5,
+        "sleep": "23:00",
+        "awake": "07:05",
+        "hoursSlept": "8:05",
+        "dayRank": "9"
+    },
+    {
+        "date": "07/19/2020",
+        "time": "07:15",
+        "weight": 161.6,
+        "temp": 97.9,
+        "sleep": "23:00",
+        "awake": "06:30",
+        "hoursSlept": "7:30",
+        "dayRank": "9"
+    },
+    {
+        "date": "07/20/2020",
+        "time": "07:25",
+        "weight": 161.2,
+        "temp": 97.5,
+        "sleep": "23:30",
+        "awake": "07:00",
+        "hoursSlept": "7:30",
+        "dayRank": "9"
+    },
+    {
+        "date": "07/21/2020",
+        "time": "07:16",
+        "weight": 162.4,
+        "temp": 97.9,
+        "sleep": "00:00",
+        "awake": "07:00",
+        "hoursSlept": "7:00",
+        "dayRank": "9"
+    },
+    {
+        "date": "07/22/2020",
+        "time": "07:52",
+        "weight": 162,
+        "temp": 98,
+        "sleep": "23:30",
+        "awake": "07:00",
+        "hoursSlept": "7:30",
+        "dayRank": "9"
+    },
+    {
+        "date": "07/23/2020",
+        "time": "07:30",
+        "weight": 163.8,
+        "temp": 97.6,
+        "sleep": "22:30",
+        "awake": "06:45",
+        "hoursSlept": "8:15",
+        "dayRank": "8"
+    },
+    {
+        "date": "07/24/2020",
+        "time": "06:55",
+        "weight": 164.4,
+        "temp": 96.7,
+        "sleep": "22:00",
+        "awake": "06:30",
+        "hoursSlept": "8:30",
+        "dayRank": "8"
+    },
+    {
+        "date": "07/25/2020",
+        "time": "09:38",
+        "weight": 160.8,
+        "temp": 97.2,
+        "sleep": "01:30",
+        "awake": "09:45",
+        "hoursSlept": "8:15",
+        "dayRank": "6"
+    },
+    {
+        "date": "07/27/2020",
+        "time": "08:33",
+        "weight": 162,
+        "temp": 97.4,
+        "sleep": "00:00",
+        "awake": "08:30",
+        "hoursSlept": "8:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "07/28/2020",
+        "time": "07:41",
+        "weight": 164.2,
+        "temp": 97.4,
+        "sleep": "00:00",
+        "awake": "07:30",
+        "hoursSlept": "7:30",
+        "dayRank": "5"
+    },
+    {
+        "date": "07/29/2020",
+        "time": "08:12",
+        "weight": 164.4,
+        "temp": 98.1,
+        "sleep": "23:30",
+        "awake": "07:30",
+        "hoursSlept": "8:00",
+        "dayRank": "4"
+    },
+    {
+        "date": "07/30/2020",
+        "time": "08:16",
+        "weight": 165,
+        "temp": 98.1,
+        "sleep": "23:30",
+        "awake": "08:00",
+        "hoursSlept": "8:30",
+        "dayRank": "5"
+    },
+    {
+        "date": "07/31/2020",
+        "time": "09:47",
+        "weight": 163.4,
+        "temp": 98.6,
+        "sleep": "01:00",
+        "awake": "09:00",
+        "hoursSlept": "8:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "08/01/2020",
+        "time": "07:56",
+        "weight": 165,
+        "temp": 98.2,
+        "sleep": "00:00",
+        "awake": "07:30",
+        "hoursSlept": "7:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "08/02/2020",
+        "time": "08:31",
+        "weight": 163.6,
+        "temp": 98.2,
+        "sleep": "00:00",
+        "awake": "08:00",
+        "hoursSlept": "8:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "08/03/2020",
+        "time": "07:08",
+        "weight": 163.4,
+        "temp": 98.1,
+        "sleep": "23:00",
+        "awake": "07:00",
+        "hoursSlept": "8:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "08/04/2020",
+        "time": "06:15",
+        "weight": 162.6,
+        "temp": 97.5,
+        "sleep": "23:00",
+        "awake": "06:00",
+        "hoursSlept": "7:00",
+        "dayRank": "8"
+    },
+    {
+        "date": "08/05/2020",
+        "time": "06:45",
+        "weight": 163.4,
+        "temp": 97.6,
+        "sleep": "23:30",
+        "awake": "06:30",
+        "hoursSlept": "7:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "08/06/2020",
+        "time": "07:00",
+        "weight": 165,
+        "temp": 98.2,
+        "sleep": "23:00",
+        "awake": "06:30",
+        "hoursSlept": "7:30",
+        "dayRank": "8"
+    },
+    {
+        "date": "08/07/2020",
+        "time": "08:20",
+        "weight": 162.8,
+        "temp": 97.9,
+        "sleep": "01:00",
+        "awake": "07:30",
+        "hoursSlept": "6:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "08/08/2020",
+        "time": "08:03",
+        "weight": 163,
+        "temp": 98.1,
+        "sleep": "23:00",
+        "awake": "07:40",
+        "hoursSlept": "8:40",
+        "dayRank": "9"
+    },
+    {
+        "date": "08/09/2020",
+        "time": "09:45",
+        "weight": 160.4,
+        "temp": 98.1,
+        "sleep": "01:00",
+        "awake": "09:00",
+        "hoursSlept": "8:00",
+        "dayRank": "9"
+    },
+    {
+        "date": "08/10/2020",
+        "time": "07:04",
+        "weight": 162.4,
+        "temp": 98.4,
+        "sleep": "00:00",
+        "awake": "07:00",
+        "hoursSlept": "7:00",
+        "dayRank": "8"
+    },
+    {
+        "date": "08/11/2020",
+        "time": "07:39",
+        "weight": 163.4,
+        "temp": 98.4,
+        "sleep": "23:00",
+        "awake": "07:30",
+        "hoursSlept": "8:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "08/12/2020",
+        "time": "07:06",
+        "weight": 164.4,
+        "temp": 98.4,
+        "sleep": "23:00",
+        "awake": "07:00",
+        "hoursSlept": "8:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "08/13/2020",
+        "time": "07:08",
+        "weight": 162.8,
+        "temp": 98.5,
+        "sleep": "22:30",
+        "awake": "06:30",
+        "hoursSlept": "8:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "08/14/2020",
+        "time": "07:23",
+        "weight": 162,
+        "temp": 98.6,
+        "sleep": "22:30",
+        "awake": "06:30",
+        "hoursSlept": "8:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "08/15/2020",
+        "time": "07:20",
+        "weight": 162.4,
+        "temp": 98.2,
+        "sleep": "22:30",
+        "awake": "06:45",
+        "hoursSlept": "8:15",
+        "dayRank": "8"
+    },
+    {
+        "date": "08/17/2020",
+        "time": "07:26",
+        "weight": 161.4,
+        "temp": 98.2,
+        "sleep": "23:00",
+        "awake": "07:00",
+        "hoursSlept": "8:00",
+        "dayRank": "8"
+    },
+    {
+        "date": "08/18/2020",
+        "time": "07:16",
+        "weight": 161.4,
+        "temp": 98.1,
+        "sleep": "00:00",
+        "awake": "07:00",
+        "hoursSlept": "7:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "08/19/2020",
+        "time": "07:44",
+        "weight": 161.8,
+        "temp": 98,
+        "sleep": "23:00",
+        "awake": "07:00",
+        "hoursSlept": "8:00",
+        "dayRank": "5"
+    },
+    {
+        "date": "08/20/2020",
+        "time": "07:13",
+        "weight": 163,
+        "temp": 98.2,
+        "sleep": "23:30",
+        "awake": "07:00",
+        "hoursSlept": "7:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "08/21/2020",
+        "time": "06:50",
+        "weight": 160.6,
+        "temp": 97.2,
+        "sleep": "23:00",
+        "awake": "06:40",
+        "hoursSlept": "7:40",
+        "dayRank": "5"
+    },
+    {
+        "date": "08/22/2020",
+        "time": "07:54",
+        "weight": 157.4,
+        "temp": 97.4,
+        "sleep": "01:30",
+        "awake": "07:30",
+        "hoursSlept": "6:00",
+        "dayRank": "5"
+    },
+    {
+        "date": "08/23/2020",
+        "time": "08:46",
+        "weight": 159.4,
+        "temp": 98.2,
+        "sleep": "22:00",
+        "awake": "08:00",
+        "hoursSlept": "10:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "08/24/2020",
+        "time": "07:12",
+        "weight": 160.4,
+        "temp": 98.1,
+        "sleep": "22:30",
+        "awake": "06:30",
+        "hoursSlept": "8:00",
+        "dayRank": "8"
+    },
+    {
+        "date": "08/25/2020",
+        "time": "07:39",
+        "weight": 157.4,
+        "temp": 97.5,
+        "sleep": "23:30",
+        "awake": "07:00",
+        "hoursSlept": "7:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "08/26/2020",
+        "time": "06:52",
+        "weight": 159,
+        "temp": 98,
+        "sleep": "22:30",
+        "awake": "06:20",
+        "hoursSlept": "7:50",
+        "dayRank": "8"
+    },
+    {
+        "date": "08/27/2020",
+        "time": "07:00",
+        "weight": 159,
+        "temp": 97.4,
+        "sleep": "23:00",
+        "awake": "06:20",
+        "hoursSlept": "7:20",
+        "dayRank": "8"
+    },
+    {
+        "date": "08/28/2020",
+        "time": "07:32",
+        "weight": 159.8,
+        "temp": 97.9,
+        "sleep": "23:30",
+        "awake": "07:00",
+        "hoursSlept": "7:30",
+        "dayRank": "8"
+    },
+    {
+        "date": "08/29/2020",
+        "time": "09:30",
+        "weight": 159.2,
+        "temp": 97.8,
+        "sleep": "23:00",
+        "awake": "09:00",
+        "hoursSlept": "10:00",
+        "dayRank": "9"
+    },
+    {
+        "date": "08/30/2020",
+        "time": "10:21",
+        "weight": 157.6,
+        "temp": 97.6,
+        "sleep": "04:00",
+        "awake": "09:00",
+        "hoursSlept": "5:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "08/31/2020",
+        "time": "07:28",
+        "weight": 159.2,
+        "temp": 97.2,
+        "sleep": "22:30",
+        "awake": "07:00",
+        "hoursSlept": "8:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "09/01/2020",
+        "time": "07:35",
+        "weight": 159.4,
+        "temp": 97.6,
+        "sleep": "23:00",
+        "awake": "07:10",
+        "hoursSlept": "8:10",
+        "dayRank": "6"
+    },
+    {
+        "date": "09/02/2020",
+        "time": "07:26",
+        "weight": 156.6,
+        "temp": 98,
+        "sleep": "23:00",
+        "awake": "07:00",
+        "hoursSlept": "8:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "09/03/2020",
+        "time": "06:27",
+        "weight": 159.4,
+        "temp": 98,
+        "sleep": "23:00",
+        "awake": "06:15",
+        "hoursSlept": "7:15",
+        "dayRank": "8"
+    },
+    {
+        "date": "09/04/2020",
+        "time": "07:30",
+        "weight": 157.4,
+        "temp": 97.8,
+        "sleep": "00:00",
+        "awake": "07:20",
+        "hoursSlept": "7:20",
+        "dayRank": "7"
+    },
+    {
+        "date": "09/05/2020",
+        "time": "08:04",
+        "weight": 160.4,
+        "temp": 98,
+        "sleep": "00:00",
+        "awake": "07:30",
+        "hoursSlept": "7:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "09/06/2020",
+        "time": "07:04",
+        "weight": 159,
+        "temp": 98,
+        "sleep": "22:30",
+        "awake": "06:40",
+        "hoursSlept": "8:10",
+        "dayRank": "7"
+    },
+    {
+        "date": "09/08/2020",
+        "time": "07:22",
+        "weight": 159.6,
+        "temp": 98.1,
+        "sleep": "00:00",
+        "awake": "07:00",
+        "hoursSlept": "7:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "09/09/2020",
+        "time": "07:30",
+        "weight": 158.6,
+        "temp": 98.2,
+        "sleep": "00:30",
+        "awake": "07:00",
+        "hoursSlept": "6:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "09/10/2020",
+        "time": "07:50",
+        "weight": 158.2,
+        "temp": 98.6,
+        "sleep": "23:00",
+        "awake": "07:30",
+        "hoursSlept": "8:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "09/11/2020",
+        "time": "07:54",
+        "weight": 156.6,
+        "temp": 98.2,
+        "sleep": "00:30",
+        "awake": "07:15",
+        "hoursSlept": "6:45",
+        "dayRank": "5"
+    },
+    {
+        "date": "09/12/2020",
+        "time": "07:20",
+        "weight": 157.8,
+        "temp": 96.3,
+        "sleep": "23:00",
+        "awake": "06:40",
+        "hoursSlept": "7:40",
+        "dayRank": "9"
+    },
+    {
+        "date": "09/13/2020",
+        "time": "07:02",
+        "weight": 155.6,
+        "temp": 98,
+        "sleep": "23:00",
+        "awake": "06:40",
+        "hoursSlept": "7:40",
+        "dayRank": "9"
+    },
+    {
+        "date": "09/14/2020",
+        "time": "07:22",
+        "weight": 158,
+        "temp": 98.4,
+        "sleep": "23:30",
+        "awake": "06:40",
+        "hoursSlept": "7:10",
+        "dayRank": "7"
+    },
+    {
+        "date": "09/15/2020",
+        "time": "06:41",
+        "weight": 160,
+        "temp": 97.6,
+        "sleep": "00:30",
+        "awake": "06:00",
+        "hoursSlept": "5:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "09/16/2020",
+        "time": "07:30",
+        "weight": 157.6,
+        "temp": 97.1,
+        "sleep": "00:00",
+        "awake": "07:00",
+        "hoursSlept": "7:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "09/17/2020",
+        "time": "07:22",
+        "weight": 158,
+        "temp": 98.1,
+        "sleep": "23:00",
+        "awake": "07:00",
+        "hoursSlept": "8:00",
+        "dayRank": "5"
+    },
+    {
+        "date": "09/18/2020",
+        "time": "07:39",
+        "weight": 157.8,
+        "temp": 97.8,
+        "sleep": "00:00",
+        "awake": "07:00",
+        "hoursSlept": "7:00",
+        "dayRank": "8"
+    },
+    {
+        "date": "09/19/2020",
+        "time": "07:23",
+        "weight": 158,
+        "temp": 96.6,
+        "sleep": "22:30",
+        "awake": "07:00",
+        "hoursSlept": "8:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "09/20/2020",
+        "time": "06:31",
+        "weight": 155.6,
+        "temp": 96.4,
+        "sleep": "22:30",
+        "awake": "06:10",
+        "hoursSlept": "7:40",
+        "dayRank": "9"
+    },
+    {
+        "date": "09/21/2020",
+        "time": "07:46",
+        "weight": 157.2,
+        "temp": 96.2,
+        "sleep": "00:00",
+        "awake": "06:00",
+        "hoursSlept": "6:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "09/22/2020",
+        "time": "06:52",
+        "weight": 158.8,
+        "temp": 96.3,
+        "sleep": "23:30",
+        "awake": "06:00",
+        "hoursSlept": "6:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "09/23/2020",
+        "time": "07:09",
+        "weight": 157.2,
+        "temp": 97.8,
+        "sleep": "00:00",
+        "awake": "06:30",
+        "hoursSlept": "6:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "09/24/2020",
+        "time": "06:58",
+        "weight": 158,
+        "temp": 97.4,
+        "sleep": "23:30",
+        "awake": "06:30",
+        "hoursSlept": "7:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "09/25/2020",
+        "time": "07:37",
+        "weight": 156,
+        "temp": 98,
+        "sleep": "00:30",
+        "awake": "07:00",
+        "hoursSlept": "6:30",
+        "dayRank": "5"
+    },
+    {
+        "date": "09/26/2020",
+        "time": "08:45",
+        "weight": 158.6,
+        "temp": 98,
+        "sleep": "22:30",
+        "awake": "06:40",
+        "hoursSlept": "8:10",
+        "dayRank": "9"
+    },
+    {
+        "date": "09/27/2020",
+        "time": "06:29",
+        "weight": 158.2,
+        "temp": 98.2,
+        "sleep": "22:30",
+        "awake": "06:00",
+        "hoursSlept": "7:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "09/28/2020",
+        "time": "07:44",
+        "weight": 157.6,
+        "temp": 98.2,
+        "sleep": "00:00",
+        "awake": "07:00",
+        "hoursSlept": "7:00",
+        "dayRank": "5"
+    },
+    {
+        "date": "09/29/2020",
+        "time": "07:26",
+        "weight": 159.6,
+        "temp": 97.5,
+        "sleep": "00:00",
+        "awake": "06:30",
+        "hoursSlept": "6:30",
+        "dayRank": "5"
+    },
+    {
+        "date": "09/30/2020",
+        "time": "07:48",
+        "weight": 156.8,
+        "temp": 97.5,
+        "sleep": "00:00",
+        "awake": "07:00",
+        "hoursSlept": "7:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "10/01/2020",
+        "time": "08:02",
+        "weight": 157.2,
+        "temp": 97.4,
+        "sleep": "01:00",
+        "awake": "07:30",
+        "hoursSlept": "06:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "10/02/2020",
+        "time": "08:29",
+        "weight": 156,
+        "temp": 97.2,
+        "sleep": "00:30",
+        "awake": "07:30",
+        "hoursSlept": "07:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "10/03/2020",
+        "time": "08:07",
+        "weight": 157.4,
+        "temp": 97.1,
+        "sleep": "23:30",
+        "awake": "07:30",
+        "hoursSlept": "08:00",
+        "dayRank": "8"
+    },
+    {
+        "date": "10/04/2020",
+        "time": "06:15",
+        "weight": 158.6,
+        "temp": 96.3,
+        "sleep": "23:00",
+        "awake": "06:00",
+        "hoursSlept": "07:00",
+        "dayRank": "9"
+    },
+    {
+        "date": "10/05/2020",
+        "time": "06:55",
+        "weight": 155.8,
+        "temp": 96.7,
+        "sleep": "23:00",
+        "awake": "06:10",
+        "hoursSlept": "07:10",
+        "dayRank": "9"
+    },
+    {
+        "date": "10/06/2020",
+        "time": "07:03",
+        "weight": 158.4,
+        "temp": 97.4,
+        "sleep": "23:00",
+        "awake": "06:30",
+        "hoursSlept": "07:30",
+        "dayRank": "10"
+    },
+    {
+        "date": "10/07/2020",
+        "time": "07:27",
+        "weight": 156.8,
+        "temp": 97.6,
+        "sleep": "00:00",
+        "awake": "07:00",
+        "hoursSlept": "07:00",
+        "dayRank": "8"
+    },
+    {
+        "date": "10/08/2020",
+        "time": "07:09",
+        "weight": 157.8,
+        "temp": 97.6,
+        "sleep": "23:00",
+        "awake": "06:30",
+        "hoursSlept": "07:30",
+        "dayRank": "10"
+    },
+    {
+        "date": "10/09/2020",
+        "time": "07:45",
+        "weight": 156.8,
+        "temp": 96.4,
+        "sleep": "00:00",
+        "awake": "07:00",
+        "hoursSlept": "07:00",
+        "dayRank": "8"
+    },
+    {
+        "date": "10/10/2020",
+        "time": "08:27",
+        "weight": 157,
+        "temp": 96.7,
+        "sleep": "23:30",
+        "awake": "07:45",
+        "hoursSlept": "08:15",
+        "dayRank": "6"
+    },
+    {
+        "date": "10/11/2020",
+        "time": "06:05",
+        "weight": 159.4,
+        "temp": 97.5,
+        "sleep": "23:00",
+        "awake": "06:00",
+        "hoursSlept": "07:00",
+        "dayRank": "10"
+    },
+    {
+        "date": "10/12/2020",
+        "time": "07:50",
+        "weight": 157.8,
+        "temp": 98,
+        "sleep": "01:00",
+        "awake": "07:30",
+        "hoursSlept": "06:30",
+        "dayRank": "9"
+    },
+    {
+        "date": "10/13/2020",
+        "time": "07:00",
+        "weight": 157.8,
+        "temp": 96.5,
+        "sleep": "22:00",
+        "awake": "07:00",
+        "hoursSlept": "09:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "10/14/2020",
+        "time": "06:05",
+        "weight": 156.8,
+        "temp": 96.2,
+        "sleep": "23:30",
+        "awake": "06:00",
+        "hoursSlept": "06:30",
+        "dayRank": "9"
+    },
+    {
+        "date": "10/15/2020",
+        "time": "07:44",
+        "weight": 157.4,
+        "temp": 97.1,
+        "sleep": "23:00",
+        "awake": "07:15",
+        "hoursSlept": "08:15",
+        "dayRank": "8"
+    },
+    {
+        "date": "10/16/2020",
+        "time": "08:15",
+        "weight": 156.4,
+        "temp": 96.7,
+        "sleep": "00:30",
+        "awake": "07:45",
+        "hoursSlept": "07:15",
+        "dayRank": "6"
+    },
+    {
+        "date": "10/17/2020",
+        "time": "08:31",
+        "weight": 157,
+        "temp": 96.5,
+        "sleep": "22:30",
+        "awake": "07:00",
+        "hoursSlept": "08:30",
+        "dayRank": "10"
+    },
+    {
+        "date": "10/18/2020",
+        "time": "06:03",
+        "weight": 158,
+        "temp": 95.7,
+        "sleep": "22:30",
+        "awake": "06:00",
+        "hoursSlept": "07:30",
+        "dayRank": "9"
+    },
+    {
+        "date": "10/19/2020",
+        "time": "07:15",
+        "weight": 158.6,
+        "temp": 97.1,
+        "sleep": "00:00",
+        "awake": "07:00",
+        "hoursSlept": "07:00",
+        "dayRank": "8"
+    },
+    {
+        "date": "10/20/2020",
+        "time": "06:41",
+        "weight": 157.4,
+        "temp": 96.3,
+        "sleep": "22:30",
+        "awake": "06:20",
+        "hoursSlept": "07:50",
+        "dayRank": "10"
+    },
+    {
+        "date": "10/21/2020",
+        "time": "07:57",
+        "weight": 156.6,
+        "temp": 97.1,
+        "sleep": "00:00",
+        "awake": "07:00",
+        "hoursSlept": "07:00",
+        "dayRank": "9"
+    },
+    {
+        "date": "10/22/2020",
+        "time": "07:11",
+        "weight": 155,
+        "temp": 96.7,
+        "sleep": "22:30",
+        "awake": "07:00",
+        "hoursSlept": "08:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "10/23/2020",
+        "time": "08:04",
+        "weight": 156.2,
+        "temp": 98,
+        "sleep": "00:00",
+        "awake": "07:45",
+        "hoursSlept": "07:45",
+        "dayRank": "8"
+    },
+    {
+        "date": "10/24/2020",
+        "time": "09:09",
+        "weight": 156,
+        "temp": 97.5,
+        "sleep": "02:00",
+        "awake": "09:00",
+        "hoursSlept": "07:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "10/25/2020",
+        "time": "06:04",
+        "weight": 157.2,
+        "temp": 95.4,
+        "sleep": "23:00",
+        "awake": "06:00",
+        "hoursSlept": "07:00",
+        "dayRank": "8"
+    },
+    {
+        "date": "10/26/2020",
+        "time": "07:05",
+        "weight": 158.6,
+        "temp": 95.7,
+        "sleep": "23:00",
+        "awake": "06:30",
+        "hoursSlept": "07:30",
+        "dayRank": "8"
+    },
+    {
+        "date": "10/27/2020",
+        "time": "06:37",
+        "weight": 158.4,
+        "temp": 96.4,
+        "sleep": "23:00",
+        "awake": "06:30",
+        "hoursSlept": "07:30",
+        "dayRank": "8"
+    },
+    {
+        "date": "10/28/2020",
+        "time": "07:39",
+        "weight": 157.6,
+        "temp": 96.5,
+        "sleep": "00:00",
+        "awake": "07:10",
+        "hoursSlept": "07:10",
+        "dayRank": "6"
+    },
+    {
+        "date": "10/29/2020",
+        "time": "07:45",
+        "weight": 157.8,
+        "temp": 96.2,
+        "sleep": "23:30",
+        "awake": "07:30",
+        "hoursSlept": "08:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "10/30/2020",
+        "time": "07:14",
+        "weight": 158.6,
+        "temp": 96,
+        "sleep": "00:00",
+        "awake": "07:00",
+        "hoursSlept": "07:00",
+        "dayRank": "6"
+    },
+    {
+        "date": "10/31/2020",
+        "time": "08:00",
+        "weight": 158,
+        "temp": 95.8,
+        "sleep": "23:00",
+        "awake": "07:30",
+        "hoursSlept": "08:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "11/01/2020",
+        "time": "06:19",
+        "weight": 157.8,
+        "temp": 95.2,
+        "sleep": "22:30",
+        "awake": "06:00",
+        "hoursSlept": "07:30",
+        "dayRank": "5"
+    },
+    {
+        "date": "11/02/2020",
+        "time": "06:27",
+        "weight": 157,
+        "temp": 95.9,
+        "sleep": "23:00",
+        "awake": "06:10",
+        "hoursSlept": "07:10",
+        "dayRank": "7"
+    },
+    {
+        "date": "11/03/2020",
+        "time": "07:38",
+        "weight": 157,
+        "temp": 95.8,
+        "sleep": "00:00",
+        "awake": "07:00",
+        "hoursSlept": "07:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "11/04/2020",
+        "time": "08:11",
+        "weight": 156,
+        "temp": 96.1,
+        "sleep": "01:00",
+        "awake": "07:45",
+        "hoursSlept": "06:45",
+        "dayRank": "6"
+    },
+    {
+        "date": "11/05/2020",
+        "time": "07:52",
+        "weight": 156.6,
+        "temp": 96.4,
+        "sleep": "23:30",
+        "awake": "07:10",
+        "hoursSlept": "07:40",
+        "dayRank": "6"
+    },
+    {
+        "date": "11/06/2020",
+        "time": "06:44",
+        "weight": 155,
+        "temp": 96.2,
+        "sleep": "00:00",
+        "awake": "06:35",
+        "hoursSlept": "06:35",
+        "dayRank": "8"
+    },
+    {
+        "date": "11/07/2020",
+        "time": "09:23",
+        "weight": 155.8,
+        "temp": 96.4,
+        "sleep": "02:30",
+        "awake": "09:00",
+        "hoursSlept": "06:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "11/08/2020",
+        "time": "05:04",
+        "weight": 158.6,
+        "temp": 96.2,
+        "sleep": "23:00",
+        "awake": "06:00",
+        "hoursSlept": "07:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "11/09/2020",
+        "time": "07:27",
+        "weight": 159.6,
+        "temp": 96.1,
+        "sleep": "00:30",
+        "awake": "07:00",
+        "hoursSlept": "06:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "11/10/2020",
+        "time": "06:39",
+        "weight": 158.2,
+        "temp": 96.6,
+        "sleep": "22:30",
+        "awake": "06:30",
+        "hoursSlept": "08:00",
+        "dayRank": "8"
+    },
+    {
+        "date": "11/11/2020",
+        "time": "06:42",
+        "weight": 155,
+        "temp": 98.6,
+        "sleep": "00:00",
+        "awake": "06:30",
+        "hoursSlept": "06:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "11/12/2020",
+        "time": "07:19",
+        "weight": 156,
+        "temp": 99.2,
+        "sleep": "23:00",
+        "awake": "06:30",
+        "hoursSlept": "07:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "11/13/2020",
+        "time": "07:28",
+        "weight": 157.2,
+        "temp": 97.5,
+        "sleep": "00:30",
+        "awake": "07:00",
+        "hoursSlept": "06:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "11/14/2020",
+        "time": "05:14",
+        "weight": 158.4,
+        "temp": 97.8,
+        "sleep": "21:30",
+        "awake": "05:10",
+        "hoursSlept": "07:40",
+        "dayRank": "6"
+    },
+    {
+        "date": "11/15/2020",
+        "time": "06:09",
+        "weight": 158.2,
+        "temp": 97.4,
+        "sleep": "22:30",
+        "awake": "06:00",
+        "hoursSlept": "07:30",
+        "dayRank": "5"
+    },
+    {
+        "date": "11/16/2020",
+        "time": "06:24",
+        "weight": 158.4,
+        "temp": 98.4,
+        "sleep": "22:30",
+        "awake": "06:10",
+        "hoursSlept": "07:40",
+        "dayRank": "7"
+    },
+    {
+        "date": "11/17/2020",
+        "time": "05:19",
+        "weight": 158,
+        "temp": 97.4,
+        "sleep": "21:30",
+        "awake": "05:15",
+        "hoursSlept": "07:45",
+        "dayRank": "9"
+    },
+    {
+        "date": "11/18/2020",
+        "time": "07:09",
+        "weight": 154.4,
+        "temp": 96.5,
+        "sleep": "23:30",
+        "awake": "07:00",
+        "hoursSlept": "07:30",
+        "dayRank": "9"
+    },
+    {
+        "date": "11/19/2020",
+        "time": "07:15",
+        "weight": 154.6,
+        "temp": 97.2,
+        "sleep": "23:00",
+        "awake": "07:15",
+        "hoursSlept": "08:15",
+        "dayRank": "5"
+    },
+    {
+        "date": "11/20/2020",
+        "time": "07:40",
+        "weight": 153.8,
+        "temp": 97.3,
+        "sleep": "00:30",
+        "awake": "07:30",
+        "hoursSlept": "07:00",
+        "dayRank": "7"
+    },
+    {
+        "date": "11/21/2020",
+        "time": "07:00",
+        "weight": 156,
+        "temp": 98,
+        "sleep": "22:30",
+        "awake": "07:00",
+        "hoursSlept": "08:30",
+        "dayRank": "8"
+    },
+    {
+        "date": "11/22/2020",
+        "time": "06:10",
+        "weight": 157.4,
+        "temp": 97.2,
+        "sleep": "22:30",
+        "awake": "06:00",
+        "hoursSlept": "07:30",
+        "dayRank": "9"
+    },
+    {
+        "date": "11/23/2020",
+        "time": "06:35",
+        "weight": 157,
+        "temp": 98.4,
+        "sleep": "23:00",
+        "awake": "06:30",
+        "hoursSlept": "07:30",
+        "dayRank": "7"
+    },
+    {
+        "date": "11/24/2020",
+        "time": "06:38",
+        "weight": 157.8,
+        "temp": 98.3,
+        "sleep": "22:30",
+        "awake": "06:30",
+        "hoursSlept": "08:00",
+        "dayRank": "8"
+    },
+    {
+        "date": "11/25/2020",
+        "time": "07:00",
+        "weight": 156,
+        "temp": 97.9,
+        "sleep": "00:00",
+        "awake": "07:00",
+        "hoursSlept": "07:00",
+        "dayRank": "8"
+    },
+    {
+        "date": "11/26/2020",
+        "time": "07:40",
+        "weight": 157,
+        "temp": 98.4,
+        "sleep": "23:00",
+        "awake": "07:40",
+        "hoursSlept": "08:40",
+        "dayRank": "6"
+    },
+    {
+        "date": "11/27/2020",
+        "time": "07:50",
+        "weight": 157.2,
+        "temp": 97.4,
+        "sleep": "00:00",
+        "awake": "07:30",
+        "hoursSlept": "07:30",
+        "dayRank": "5"
+    },
+    {
+        "date": "11/28/2020",
+        "time": "07:00",
+        "weight": 158.4,
+        "temp": 95.4,
+        "sleep": "22:00",
+        "awake": "06:30",
+        "hoursSlept": "08:30",
+        "dayRank": "6"
+    },
+    {
+        "date": "11/29/2020",
+        "time": "06:45",
+        "weight": 158.4,
+        "temp": 97.6,
+        "sleep": "23:00",
+        "awake": "06:05",
+        "hoursSlept": "07:05",
+        "dayRank": "6"
+    },
+    {
+        "date": "11/30/2020",
+        "time": "06:59",
+        "weight": 157.2,
+        "temp": 97.5,
+        "sleep": "23:00",
+        "awake": "06:45",
+        "hoursSlept": "07:45",
+        "dayRank": "7"
+    }
+];
+        }
+        
         // set the dimensions and margins of the graph
         let margin = {
                 top: 10,
@@ -99,7 +2395,7 @@
                     // "time: " + d.time + "<br>" +
                     "weight: " + d.weight + "<br>" +
                     "temp: " + d.temp + "<br>" +
-                    "hrs_slept: " + d.hrs_slept)
+                    "hrs_slept: " + d.hoursSlept)
         }
         let moveTooltip = function (d) {
             return tooltip.style("top", (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");
@@ -143,7 +2439,8 @@
                 "translate(" + -375 + "," + 0 + ")");
 
         //Read the data
-        d3.json(data, (data) => {
+        d3.json(blogData, (data) => {
+        // d3.json("/data/blog-data.json", (data) => {
             console.log(data)
 
             let dateCheck = d3.range(data.length).map((d, i) => {
@@ -151,7 +2448,7 @@
                     date: new Date(data[i].date)
                 }
             });
-            console.log(dateCheck)
+            // console.log(dateCheck)
 
             // Add X axis
             let x = d3.scaleLinear()
@@ -185,7 +2482,7 @@
                 .enter()
                 .append("circle")
                 .attr("class", function (d) {
-                    let hm = d.hrs_slept; // your input string
+                    let hm = d.hoursSlept; // your input string
                     let a = hm.split(':'); // split it at the colons
 
                     // Hours are worth 60 minutes.
@@ -211,7 +2508,7 @@
                     return z(d.weight);
                 })
                 .style("fill", function (d) {
-                    let hm = d.hrs_slept; // your input string
+                    let hm = d.hoursSlept; // your input string
                     let a = hm.split(':'); // split it at the colons
 
                     // Hours are worth 60 minutes.
